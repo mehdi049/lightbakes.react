@@ -56,6 +56,10 @@ a:hover {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .form-control {
   border-radius: 0px;
   border: 1px solid #cb7152;
