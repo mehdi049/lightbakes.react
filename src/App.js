@@ -1,26 +1,20 @@
 import React from "react";
-import Menu from "./components/Menu";
-import Header from "./components/Header";
-import ParallaxSection from "./components/ParallaxSection";
-
-import "./App.css";
-import ContactSection from "./components/ContactSection";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
+import Article from "./components/Article";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <Header />
-
-      <ParallaxSection />
-
-      <br />
-      <br />
-      <br />
-
-      <Menu />
-      <ContactSection />
-      <Footer />
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/article" exact component={Article} />
+        </Switch>
+        <Footer />
+      </Router>
     </>
   );
 }

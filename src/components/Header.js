@@ -1,28 +1,47 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function Header() {
-  const [cls, setCls] = useState("");
+function Header(props) {
+  const [cls, setCls] = useState(props.transparent ? "" : "header-black-bg");
 
   function scrollHandler() {
     if (window.scrollY >= window.innerHeight - 40) setCls("header-black-bg");
-    else setCls("");
+    else setCls(props.transparent ? "" : "header-black-bg");
   }
   window.addEventListener("scroll", scrollHandler);
 
   return (
     <Navbar expand="lg" variant="dark" fixed="top" className={cls}>
       <Container>
-        <Navbar.Brand href="#" className="text-bold">
-          Light bakes
-        </Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand href="#" className="text-bold">
+            Light bakes
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">A propos</Nav.Link>
-            <Nav.Link href="#menu">Menu</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
-            <Nav.Link href="#">Gallerie</Nav.Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/#home">
+                A propos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/#menu">
+                Menu
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/#contact">
+                Contact
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/gallery">
+                Gallerie
+              </Link>
+            </li>
           </Nav>
         </Navbar.Collapse>
       </Container>

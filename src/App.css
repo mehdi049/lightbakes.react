@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 * {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -15,7 +17,8 @@ h1 {
   font-size: 40px;
 }
 
-a {
+a,
+.orange {
   color: #cb7152;
 }
 
@@ -95,9 +98,15 @@ a:hover {
   color: #fff;
 }
 
+.center-content {
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+
 /** header **/
 .navbar {
   background: rgb(1 1 1 / 48%);
+  /* background: rgb(37 37 37) !important; */
 }
 
 .header-black-bg {
@@ -157,6 +166,12 @@ a:hover {
   cursor: pointer;
   margin-bottom: 20px;
   padding-bottom: 20px;
+}
+
+.menu-item-link,
+.menu-item-link:hover {
+  color: inherit;
+  text-decoration: none;
 }
 
 .menu-item:hover {
@@ -221,6 +236,47 @@ footer {
   padding: 10px;
   background: rgb(37 37 37);
   color: #fff;
+}
+
+/** article **/
+.image-gallery-thumbnail {
+  width: 150px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.image-gallery-icon:hover {
+  color: #cb7152;
+}
+
+.image-gallery-right-nav .image-gallery-svg,
+.image-gallery-left-nav .image-gallery-svg {
+  height: 60px;
+  width: 60px;
+  background: rgb(255 255 255);
+  color: rgb(25 25 25 / 95%);
+  border-radius: 50px;
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  opacity: 0.6;
+  transition: opacity 1s;
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image:hover {
+  opacity: 1;
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:hover,
+.image-gallery-thumbnail:focus {
+  border: 4px solid #cb7152;
+}
+
+.image-gallery-icon:hover .image-gallery-svg {
+  background: #cb7152;
+  color: #fff;
+  transform: scale(1);
 }
 
 /** media query **/
