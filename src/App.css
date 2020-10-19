@@ -23,6 +23,11 @@ a:hover {
   color: #b7522f;
 }
 
+.menu-selected {
+  color: #cb7152;
+  border-bottom: 2px solid #cb7152;
+}
+
 .text-bold {
   font-weight: 600;
 }
@@ -40,7 +45,7 @@ a:hover {
 }
 
 .container-small {
-  width: 800px;
+  width: 1000px;
 }
 
 .text-center {
@@ -170,12 +175,14 @@ a:hover {
 #menu-text span {
   font-size: 20px;
   cursor: pointer;
-  transition: font-weight 0.3s, color 0.3s;
+  transition: color 0.3s;
+  text-align: center;
+  display: block;
+  margin-bottom: 15px;
 }
 
 #menu-text span:hover {
   color: #cb7152;
-  font-weight: 700;
 }
 
 .card {
@@ -218,7 +225,7 @@ footer {
 
 /** media query **/
 
-/** medium screen **/
+/** medium - xl screen **/
 @media (min-width: 768px) and (max-width: 1200px) {
   .img-area {
     height: 152px;

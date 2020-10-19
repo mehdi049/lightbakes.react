@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Parallax, Background } from "react-parallax";
+import React from "react";
+import { Parallax } from "react-parallax";
 
 function ParallaxSection() {
   const insideStyles = {
