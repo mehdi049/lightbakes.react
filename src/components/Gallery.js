@@ -3,6 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import Header from "./Header";
+import ContactSection from "./ContactSection";
 
 function GalleryPage() {
   const photos = [
@@ -111,6 +112,7 @@ function GalleryPage() {
           </Col>
         </Row>
       </Container>
+      <ContactSection />
     </>
   );
 }

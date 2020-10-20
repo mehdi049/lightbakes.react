@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./Menu";
+import MenuSection from "./MenuSection";
 import ParallaxSection from "./ParallaxSection";
 import ContactSection from "./ContactSection";
 import Header from "./Header";
@@ -12,7 +12,7 @@ function Home() {
       <br />
       <br />
       <br />
-      <Menu />
+      <MenuSection />
       <ContactSection />
     </>
   );

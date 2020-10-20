@@ -22,24 +22,28 @@ function Header(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/#home">
-                A propos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/#menu">
-                Menu
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/#contact">
-                Contact
-              </Link>
-            </li>
+            {props.transparent ? (
+              <Nav.Link href="#home">A propos</Nav.Link>
+            ) : (
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
+                  A propos
+                </Link>
+              </li>
+            )}
+            {props.transparent ? (
+              <Nav.Link href="#menu">Menu</Nav.Link>
+            ) : (
+              <li className="nav-item">
+                <Link className="nav-link" to="/menu">
+                  Menu
+                </Link>
+              </li>
+            )}
+            <Nav.Link href="#contact">Contact</Nav.Link>
             <li className="nav-item">
               <Link className="nav-link" to="/gallery">
-                Gallerie
+                Gallery
               </Link>
             </li>
           </Nav>
