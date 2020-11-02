@@ -170,6 +170,16 @@ a:hover {
   margin: 0px;
 }
 
+.alert-info {
+  color: #ffffff;
+  background-color: #168ba1;
+  border-color: #41bbce;
+}
+
+.alert {
+  border-radius: 0px;
+}
+
 /** header **/
 .navbar {
   background: rgb(1 1 1 / 67%);

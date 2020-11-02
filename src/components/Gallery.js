@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
@@ -6,6 +6,10 @@ import Header from "./Header";
 import ContactSection from "./ContactSection";
 
 function GalleryPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const photos = [
     {
       src: require("../../src/images/img1.jpg"),

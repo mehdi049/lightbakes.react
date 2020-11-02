@@ -38,6 +38,8 @@ function Product(props) {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     let _product = data.filter((x) => x.id === props.match.params.id);
     if (_product.length === 0) return props.history.push("/");
     else {
