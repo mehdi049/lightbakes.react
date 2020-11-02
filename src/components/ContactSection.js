@@ -15,12 +15,24 @@ function ContactSection() {
           <Col lg={6} id="contact-form">
             <h1 className="text-center">Prenez contact</h1>
             <div className="text-center">
-              <a href="#" target="_blank">
+              <a
+                href="https://www.instagram.com/light.bakes/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={faInstagramSquare} size="2x" />{" "}
               </a>
               &nbsp;&nbsp;
-              <a href="#" target="_blank">
-                <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
+              <a
+                href="https://www.facebook.com/Lightbakes-104528938093690"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebookSquare}
+                  size="2x"
+                  rel="noopener noreferrer"
+                />
               </a>
             </div>
             <br />

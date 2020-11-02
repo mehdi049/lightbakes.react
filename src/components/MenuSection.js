@@ -1,106 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
+import data from "./data/product.json";
 
 function Menu() {
   const [filter, setFilter] = useState("all");
-  const images = [
-    {
-      img: "img1.jpg",
-      type: "granola",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img2.jpg",
-      type: "brownies",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img3.jpg",
-      type: "fondant",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img4.jpg",
-      type: "beurre",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img5.jpg",
-      type: "granola",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img6.jpg",
-      type: "beurre",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img7.jpg",
-      type: "brownies",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img8.jpg",
-      type: "granola",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img9.jpg",
-      type: "granola",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img10.jpg",
-      type: "fondant",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img11.jpg",
-      type: "granola",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-    {
-      img: "img12.jpg",
-      type: "brownies",
-      title: "Healthy chicken Caesar salad",
-      tag: "BIO - HEALTHY - SWEET",
-      price: "7.0",
-    },
-  ];
-
-  const [filtredImages, setFiltredImages] = useState([...images]);
+  const [filtredProduct, setFiltredProducts] = useState(data);
 
   function filterImg(type) {
     setFilter(type);
-    if (type === "all") setFiltredImages(images);
+    if (type === "all") setFiltredProducts(data);
     else {
-      let filtredImages = images.filter(
-        (x) => x.type.toLowerCase() === type.toLowerCase()
+      const _filtredProduct = data.filter(
+        (x) => x.category.toLowerCase() === type.toLowerCase()
       );
-      setFiltredImages(filtredImages);
+      setFiltredProducts(_filtredProduct);
     }
   }
 
@@ -154,24 +68,39 @@ function Menu() {
       <br />
       <Container fluid={true}>
         <Row>
-          {filtredImages.map((x, i) => (
-            <Col lg={3} sm={6} md={4} key={i}>
-              <Link to="/article" className="menu-item-link">
-                <div className="menu-item">
-                  <div className="img-area">
-                    <img src={require("../../src/images/" + x.img)} alt="" />
+          {filtredProduct.map((x) => {
+            const path = "/product/" + x.id;
+            return (
+              <Col lg={3} sm={6} md={4} key={x.id}>
+                <Link to={path} className="menu-item-link">
+                  <div className="menu-item">
+                    <div className="img-area">
+                      <img
+                        src={require("../../src/images/" + x.images[0])}
+                        alt=""
+                      />
+                    </div>
+                    <div style={{ textAlign: "center" }}>
+                      <br />
+                      LIGHT BAKES <br />
+                      <span className="text-thin text-small">
+                        {x.tags}
+                      </span>{" "}
+                      <br />
+                      <span className="text-bold">{x.title}</span> <br />
+                      <span className="text-bold text-italic">
+                        {x.sellingOptions[0].price} dt
+                      </span>
+                      <span className="text-small">
+                        {" "}
+                        ({x.sellingOptions[0].unity})
+                      </span>
+                    </div>
                   </div>
-                  <div style={{ textAlign: "center" }}>
-                    <br />
-                    LIGHT BAKES <br />
-                    <span className="text-thin text-small">{x.tag}</span> <br />
-                    <span className="text-bold">{x.title}</span> <br />
-                    <span className="text-bold text-italic">{x.price} dt</span>
-                  </div>
-                </div>
-              </Link>
-            </Col>
-          ))}
+                </Link>
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     </>

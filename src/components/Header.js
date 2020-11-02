@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 function Header(props) {
   const [cls, setCls] = useState(props.transparent ? "" : "header-black-bg");
@@ -14,10 +16,12 @@ function Header(props) {
   return (
     <Navbar expand="lg" variant="dark" fixed="top" className={cls}>
       <Container>
-        <Link to="/">
-          <Navbar.Brand href="#" className="text-bold">
-            Light bakes
-          </Navbar.Brand>
+        <Link to="/" className="text-bold navbar-brand">
+          <img
+            src={require("../../src/images/logo/top-logo.png")}
+            alt="horizontal logo"
+            width={50}
+          />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -43,10 +47,15 @@ function Header(props) {
             <Nav.Link href="#contact">Contact</Nav.Link>
             <li className="nav-item">
               <Link className="nav-link" to="/gallery">
-                Gallery
+                Gallerie
               </Link>
             </li>
           </Nav>
+        </Navbar.Collapse>
+        <Navbar.Collapse className="justify-content-end">
+          <Link className="nav-link" to="/basket">
+            Mon panier <FontAwesomeIcon icon={faShoppingBasket} size="1x" />
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -39,8 +39,12 @@ a:hover {
   font-weight: 300;
 }
 
+.text-large {
+  font-size: 25px;
+}
+
 .text-small {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .text-italic {
@@ -103,14 +107,22 @@ a:hover {
 }
 
 .center-content {
-  margin-top: 90px;
+  margin-top: 120px;
   margin-bottom: 20px;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #cb7152;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 /** header **/
 .navbar {
-  background: rgb(1 1 1 / 48%);
-  /* background: rgb(37 37 37) !important; */
+  background: rgb(1 1 1 / 67%);
 }
 
 .header-black-bg {
@@ -119,8 +131,8 @@ a:hover {
 }
 
 .navbar-dark .navbar-brand,
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff;
+.nav-link {
+  color: #fff !important;
 }
 
 .navbar-nav {
@@ -139,8 +151,8 @@ a:hover {
   transition: color 0.3s;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: #cb7152;
+.nav-link:hover {
+  color: #cb7152 !important;
 }
 
 /** parallax section **/
@@ -242,7 +254,7 @@ footer {
   color: #fff;
 }
 
-/** article **/
+/** product **/
 .image-gallery-thumbnail {
   width: 150px;
   margin-top: 20px;

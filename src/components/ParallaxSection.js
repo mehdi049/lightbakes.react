@@ -17,7 +17,9 @@ function ParallaxSection() {
       >
         <div style={{ height: 500 }} id="home">
           <div style={insideStyles}>
-            <h1 className="border-orange text-center">Light bakes</h1>
+            <h1 className="border-orange text-center">
+              <i>Light bakes</i>
+            </h1>
             <span className="text-center text-thin">
               Stay healthy, stay fit!
             </span>
