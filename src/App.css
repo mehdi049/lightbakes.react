@@ -431,9 +431,9 @@ footer {
     }
   }
 
-  @media (min-device-width: 1200px) {
+  @media (min-device-width: 1200px) and (max-device-height: 1030px) {
     #contact-section .react-parallax {
-      height: 65vh;
+      max-height: 670px;
     }
   }
 }
