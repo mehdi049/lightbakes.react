@@ -1,22 +1,26 @@
 [
   {
     "id": "1",
-    "title": "Healthy chicken Caesar salad",
-    "description": "Blueberries are cooked with pomegranate juice for a tart-sweet mixture that's perfect spooned over creamy vanilla-scented millet pudding. This guilt-free but luscious dessert comes in under 150 calories, boasts 3 grams of fiber, and is rich in magnesium, thanks to the millet.",
+    "title": "Granola standard",
+    "description": "Notre Granola maison est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
+    "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
     "sellingOptions": [
       {
-        "unity": "1 Kg",
-        "price": 30
+        "unity": "200 gr",
+        "price": 8
       },
       {
-        "unity": "1/2 Kg",
-        "price": 17
+        "unity": "500 gr",
+        "price": 18
+      },
+      {
+        "unity": "1 kg",
+        "price": 34
       }
     ],
-    "price": 7,
     "category": "Granola",
     "tags": "Health - Recipe - Sweet",
-    "images": ["img1.jpg", "img2.jpg", "img3.jpg"]
+    "images": ["img1.jpg", "img1-1.jpg"]
   },
   {
     "id": "2",
@@ -32,7 +36,6 @@
         "price": 17
       }
     ],
-    "price": 7,
     "category": "Beurre",
     "tags": "Health - Recipe - Sweet",
     "images": ["img4.jpg", "img5.jpg", "img6.jpg"]
@@ -51,7 +54,6 @@
         "price": 17
       }
     ],
-    "price": 7,
     "category": "Fondant",
     "tags": "Health - Recipe - Sweet",
     "images": ["img7.jpg", "img8.jpg", "img9.jpg"]
@@ -70,7 +72,6 @@
         "price": 17
       }
     ],
-    "price": 7,
     "category": "Brownies",
     "tags": "Health - Recipe - Sweet",
     "images": ["img10.jpg", "img11.jpg", "img12.jpg"]
@@ -89,7 +90,6 @@
         "price": 17
       }
     ],
-    "price": 7,
     "category": "Granola",
     "tags": "Health - Recipe - Sweet",
     "images": ["img2.jpg", "img1.jpg", "img3.jpg"]
@@ -108,7 +108,7 @@
         "price": 17
       }
     ],
-    "price": 7,
+
     "category": "Beurre",
     "tags": "Health - Recipe - Sweet",
     "images": ["img5.jpg", "img4.jpg", "img6.jpg"]
@@ -127,7 +127,6 @@
         "price": 17
       }
     ],
-    "price": 7,
     "category": "Fondant",
     "tags": "Health - Recipe - Sweet",
     "images": ["img8.jpg", "img7.jpg", "img9.jpg"]
@@ -146,7 +145,6 @@
         "price": 17
       }
     ],
-    "price": 7,
     "category": "Brownies",
     "tags": "Health - Recipe - Sweet",
     "images": ["img11.jpg", "img10.jpg", "img12.jpg"]

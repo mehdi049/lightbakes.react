@@ -4,6 +4,8 @@ import Header from "./Header";
 import ContactSection from "./ContactSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import ToastMessage from "./_sharedComponents/ToastMessage";
+import { Link } from "react-router-dom";
 
 function Basket() {
   const [basketItem, setBasketItem] = useState(
@@ -13,6 +15,22 @@ function Basket() {
   );
   const [totalPrice, setTotalPrice] = useState();
 
+  /** toast hooks */
+  const [displayToast, setDisplayToast] = useState(false);
+  const [toastType, setToastType] = useState();
+  const [toastMessage, setToastMessage] = useState();
+
+  /** toast function */
+  function toastHandler(message, type) {
+    if (type === undefined) {
+      setDisplayToast(false);
+    } else {
+      setDisplayToast(true);
+      setToastMessage(message);
+      setToastType(type);
+    }
+  }
+
   function removeBasketItem(id) {
     const itemsAfterRemove = basketItem.filter((x) => x.id !== id);
     setBasketItem(itemsAfterRemove);
@@ -20,9 +38,10 @@ function Basket() {
 
     let _totalPrice = 0;
     itemsAfterRemove.map((x) => {
-      _totalPrice += x.totalPrice;
+      return (_totalPrice += x.totalPrice);
     });
     setTotalPrice(_totalPrice);
+    toastHandler("Produit retiré avec succés.", "success");
   }
 
   useEffect(() => {
@@ -47,7 +66,7 @@ function Basket() {
       <Container>
         <Row>
           <Col>
-            <Table bordered>
+            <Table responsive bordered>
               <thead>
                 <tr>
                   <th className="text-bold">#</th>
@@ -62,13 +81,16 @@ function Basket() {
               </thead>
               <tbody>
                 {basketItem.map((x, i) => {
+                  const path = "/product/" + x.id;
                   return (
                     <tr key={i}>
                       <td>{i + 1}</td>
-                      <td>{x.product}</td>
+                      <td>
+                        <Link to={path}>{x.product}</Link>
+                      </td>
                       <td>{x.unity}</td>
                       <td>{x.quantity}</td>
-                      <td>{x.totalPrice} dt</td>
+                      <td>{x.totalPrice} TND</td>
                       <td>
                         <FontAwesomeIcon
                           className="pointer"
@@ -84,7 +106,7 @@ function Basket() {
                   <td colSpan={4} className="text-right text-bold">
                     Total
                   </td>
-                  <td className="text-bold">{totalPrice} dt</td>
+                  <td className="text-bold">{totalPrice} TND</td>
                 </tr>
               </tbody>
             </Table>
@@ -101,6 +123,13 @@ function Basket() {
       </Container>
 
       <ContactSection />
+
+      <ToastMessage
+        show={displayToast}
+        toastHandler={toastHandler}
+        message={toastMessage}
+        type={toastType}
+      />
     </>
   );
 }

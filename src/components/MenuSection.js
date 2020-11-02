@@ -89,7 +89,7 @@ function Menu() {
                       <br />
                       <span className="text-bold">{x.title}</span> <br />
                       <span className="text-bold text-italic">
-                        {x.sellingOptions[0].price} dt
+                        {x.sellingOptions[0].price} TND
                       </span>
                       <span className="text-small">
                         {" "}

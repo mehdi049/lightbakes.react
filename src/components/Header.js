@@ -54,7 +54,8 @@ function Header(props) {
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Link className="nav-link" to="/basket">
-            Mon panier <FontAwesomeIcon icon={faShoppingBasket} size="1x" />
+            Mon panier &nbsp;
+            <FontAwesomeIcon icon={faShoppingBasket} size="1x" />
           </Link>
         </Navbar.Collapse>
       </Container>

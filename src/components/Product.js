@@ -3,6 +3,7 @@ import { Row, Col, Container, Form, Button } from "react-bootstrap";
 import ImageGallery from "react-image-gallery";
 import Header from "./Header";
 import data from "./data/product.json";
+import ToastMessage from "./_sharedComponents/ToastMessage";
 
 function Product(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,11 +15,27 @@ function Product(props) {
   const [productOptions, setProductOptions] = useState();
   const [selectedProductOption, setSelectedProductOption] = useState();
 
+  /** toast hooks */
+  const [displayToast, setDisplayToast] = useState(false);
+  const [toastType, setToastType] = useState();
+  const [toastMessage, setToastMessage] = useState();
+
   const [addedToBasket, setAddedToBasket] = useState(
     localStorage.getItem("basket") !== null
       ? JSON.parse(localStorage.getItem("basket"))
       : []
   );
+
+  /** toast function */
+  function toastHandler(message, type) {
+    if (type === undefined) {
+      setDisplayToast(false);
+    } else {
+      setDisplayToast(true);
+      setToastMessage(message);
+      setToastType(type);
+    }
+  }
 
   useEffect(() => {
     let _product = data.filter((x) => x.id === props.match.params.id);
@@ -59,6 +76,7 @@ function Product(props) {
     });
     setAddedToBasket(productsToAdd);
     localStorage.setItem("basket", JSON.stringify(productsToAdd));
+    toastHandler("Produit ajouté au panier avec succés.", "success");
   }
 
   function handlePrice(event) {
@@ -95,7 +113,12 @@ function Product(props) {
             />
           </Col>
           <Col md={6} sm={12}>
+            <br className="d-block d-sm-none" />
             <p>{product.description}</p>
+            <p>
+              <span className="text-bold">Ingédients</span>
+            </p>
+            <p>{product.ingredient}</p>
             <hr />
             <p>
               <span className="text-bold">Categorie:</span> {product.category}
@@ -116,7 +139,7 @@ function Product(props) {
                     {productOptions.map((x) => {
                       return (
                         <option key={x.price} value={x.price}>
-                          {x.unity} ({x.price} dt)
+                          {x.unity} ({x.price} TND)
                         </option>
                       );
                     })}
@@ -145,12 +168,19 @@ function Product(props) {
                 </Form.Group>
               </Col>
               <Col xs={12}>
-                <p className="text-large text-bold orange">{price} dt</p>
+                <p className="text-large text-bold orange">{price} TND</p>
               </Col>
             </Row>
           </Col>
         </Row>
       </Container>
+
+      <ToastMessage
+        show={displayToast}
+        toastHandler={toastHandler}
+        message={toastMessage}
+        type={toastType}
+      />
     </>
   );
 }
