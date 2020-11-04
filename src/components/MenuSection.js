@@ -22,7 +22,7 @@ function Menu() {
     <>
       <Container className="container-small">
         <Row id="menu-text">
-          <Col lg={2} xs={4}>
+          <Col xs={4} md={2}>
             <span
               onClick={() => filterImg("all")}
               className={filter === "all" ? "menu-selected" : null}
@@ -30,7 +30,7 @@ function Menu() {
               Tout
             </span>
           </Col>
-          <Col lg={2} xs={4}>
+          <Col xs={4} md={2}>
             <span
               onClick={() => filterImg("granola")}
               className={filter === "granola" ? "menu-selected" : null}
@@ -38,28 +38,36 @@ function Menu() {
               Granola
             </span>
           </Col>
-          <Col lg={2} xs={4}>
+          <Col xs={4} md={2}>
             <span
-              onClick={() => filterImg("brownies")}
-              className={filter === "brownies" ? "menu-selected" : null}
+              onClick={() => filterImg("muffin")}
+              className={filter === "muffin" ? "menu-selected" : null}
             >
-              Brownies
+              Muffins
             </span>
           </Col>
-          <Col lg={2} xs={4}>
+          <Col xs={4} md={2}>
             <span
-              onClick={() => filterImg("fondant")}
-              className={filter === "fondant" ? "menu-selected" : null}
+              onClick={() => filterImg("energy")}
+              className={filter === "energy" ? "menu-selected" : null}
             >
-              Fondant
+              Energie
             </span>
           </Col>
-          <Col lg={3} xs={8}>
+          <Col xs={4} md={2}>
             <span
-              onClick={() => filterImg("beurre")}
-              className={filter === "beurre" ? "menu-selected" : null}
+              onClick={() => filterImg("cream")}
+              className={filter === "cream" ? "menu-selected" : null}
             >
-              Beurre de cacahuète
+              Beurre
+            </span>
+          </Col>
+          <Col xs={4} md={2}>
+            <span
+              onClick={() => filterImg("sauce")}
+              className={filter === "sauce" ? "menu-selected" : null}
+            >
+              Sauce
             </span>
           </Col>
         </Row>
@@ -82,12 +90,11 @@ function Menu() {
                     </div>
                     <div style={{ textAlign: "center" }}>
                       <br />
-                      LIGHT BAKES <br />
+                      <span className="text-bold">{x.title}</span> <br />
                       <span className="text-thin text-small">
                         {x.tags}
                       </span>{" "}
                       <br />
-                      <span className="text-bold">{x.title}</span> <br />
                       <span className="text-bold text-italic">
                         {x.sellingOptions[0].price} TND
                       </span>

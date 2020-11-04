@@ -116,7 +116,7 @@ function Product(props) {
           </Col>
           <Col md={6} sm={12}>
             <br className="d-block d-sm-none" />
-            <p>{product.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: product.description }} />
             <p>
               <span className="text-bold">Ingédients</span>
             </p>
