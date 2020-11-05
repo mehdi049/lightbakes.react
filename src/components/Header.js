@@ -20,7 +20,6 @@ function Header(props) {
           <img
             src={require("../../src/images/logo/top-logo.png")}
             alt="horizontal logo"
-            width={50}
           />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -190,6 +190,7 @@ function Product(props) {
       <SimilarProduct
         category={product.category}
         changeProduct={changeProduct}
+        id={product.id}
       />
 
       <ToastMessage
