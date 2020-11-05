@@ -4,6 +4,7 @@ import ImageGallery from "react-image-gallery";
 import Header from "./Header";
 import data from "./data/product.json";
 import ToastMessage from "./_sharedComponents/ToastMessage";
+import SimilarProduct from "./SimilarProduct";
 
 function Product(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,10 +38,10 @@ function Product(props) {
     }
   }
 
-  useEffect(() => {
+  function filterProduct(id) {
     window.scrollTo(0, 0);
 
-    let _product = data.filter((x) => x.id === props.match.params.id);
+    let _product = data.filter((x) => x.id === id);
     if (_product.length === 0) return props.history.push("/");
     else {
       _product = _product[0];
@@ -58,7 +59,15 @@ function Product(props) {
       setImages(_images);
       setIsLoading(false);
     }
+  }
+
+  useEffect(() => {
+    filterProduct(props.match.params.id);
   }, []);
+
+  function changeProduct(id) {
+    filterProduct(id);
+  }
 
   function handleAddToBasket() {
     let productsToAdd =
@@ -71,9 +80,9 @@ function Product(props) {
       id: product.id,
       product: product.title,
       unity: product.sellingOptions.filter(
-        (x) => x.price === parseInt(selectedProductOption)
+        (x) => parseFloat(x.price) === parseFloat(selectedProductOption)
       )[0].unity,
-      quantity: parseInt(quantity),
+      quantity: parseFloat(quantity),
       totalPrice: price,
     });
     setAddedToBasket(productsToAdd);
@@ -176,6 +185,12 @@ function Product(props) {
           </Col>
         </Row>
       </Container>
+
+      <br />
+      <SimilarProduct
+        category={product.category}
+        changeProduct={changeProduct}
+      />
 
       <ToastMessage
         show={displayToast}
