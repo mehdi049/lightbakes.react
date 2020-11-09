@@ -44,11 +44,11 @@ function SimilarProduct(props) {
                     <span className="text-thin text-small">{x.tags}</span>{" "}
                     <br />
                     <span className="text-bold text-italic">
-                      {x.sellingOptions[0].price} TND
+                      {x.unityOptions[0].price} TND
                     </span>
                     <span className="text-small">
                       {" "}
-                      ({x.sellingOptions[0].unity})
+                      ({x.unityOptions[0].unity})
                     </span>
                   </div>
                 </div>

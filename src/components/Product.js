@@ -14,6 +14,8 @@ function Product(props) {
 
   const [quantity, setQuantity] = useState(1);
   const [productOptions, setProductOptions] = useState();
+  const [unityOptions, setUnityOptions] = useState();
+  const [selectedUnityOption, setSelectedUnityOption] = useState();
   const [selectedProductOption, setSelectedProductOption] = useState();
 
   /** toast hooks */
@@ -53,9 +55,14 @@ function Product(props) {
           thumbnail: require("../../src/images/" + x),
         });
       });
-      setProductOptions(_product.sellingOptions);
-      setSelectedProductOption(_product.sellingOptions[0].price);
-      setPrice(_product.sellingOptions[0].price);
+
+      setUnityOptions(_product.unityOptions);
+      setSelectedUnityOption(_product.unityOptions[0].price);
+
+      setProductOptions(_product.productOptions);
+      setSelectedProductOption(_product.productOptions[0].option);
+
+      setPrice(_product.unityOptions[0].price);
       setImages(_images);
       setIsLoading(false);
     }
@@ -74,17 +81,44 @@ function Product(props) {
       localStorage.getItem("basket") != null
         ? JSON.parse(localStorage.getItem("basket"))
         : [];
-    if (productsToAdd.length > 0)
-      productsToAdd = productsToAdd.filter((x) => x.id !== product.id);
-    productsToAdd.push({
-      id: product.id,
-      product: product.title,
-      unity: product.sellingOptions.filter(
-        (x) => parseFloat(x.price) === parseFloat(selectedProductOption)
-      )[0].unity,
-      quantity: parseFloat(quantity),
-      totalPrice: price,
-    });
+
+    const productUnity = product.unityOptions.filter(
+      (x) => parseFloat(x.price) === parseFloat(selectedUnityOption)
+    )[0].unity;
+
+    const productsToAddCheck = productsToAdd.filter(
+      (x) =>
+        x.id === product.id &&
+        x.option.toLowerCase() === selectedProductOption.toLowerCase() &&
+        x.unity.toLowerCase() === productUnity.toLowerCase()
+    );
+
+    if (productsToAddCheck.length === 0)
+      productsToAdd.push({
+        id: product.id,
+        product: product.title,
+        unity: productUnity,
+        option: selectedProductOption,
+        quantity: parseFloat(quantity),
+        totalPrice: price,
+      });
+    else {
+      var foundIndex = productsToAdd.findIndex(
+        (x) =>
+          x.id === product.id &&
+          x.option.toLowerCase() === selectedProductOption.toLowerCase() &&
+          x.unity.toLowerCase() === productUnity.toLowerCase()
+      );
+      productsToAdd[foundIndex] = {
+        id: product.id,
+        product: product.title,
+        unity: productUnity,
+        option: selectedProductOption,
+        quantity: parseFloat(quantity),
+        totalPrice: price,
+      };
+    }
+
     setAddedToBasket(productsToAdd);
     localStorage.setItem("basket", JSON.stringify(productsToAdd));
     toastHandler("Produit ajouté au panier avec succés.", "success");
@@ -92,12 +126,34 @@ function Product(props) {
 
   function handlePrice(event) {
     if (event.target.name === "quantity") {
+      if (
+        isNaN(event.target.value) ||
+        parseInt(event.target.value) === 0 ||
+        event.target.value === ""
+      )
+        return toastHandler("Quantité incorrecte", "error");
+      const productOptionPrice = product.productOptions.filter(
+        (x) => x.option.toLowerCase() === selectedProductOption.toLowerCase()
+      )[0].price;
       setQuantity(event.target.value);
-      setPrice(selectedProductOption * event.target.value);
+      setPrice(
+        selectedUnityOption * event.target.value +
+          productOptionPrice * event.target.value
+      );
     }
     if (event.target.name === "price-option") {
+      const productOptionPrice = product.productOptions.filter(
+        (x) => x.option.toLowerCase() === selectedProductOption.toLowerCase()
+      )[0].price;
+      setSelectedUnityOption(event.target.value);
+      setPrice(quantity * event.target.value + productOptionPrice * quantity);
+    }
+    if (event.target.name === "product-option") {
       setSelectedProductOption(event.target.value);
-      setPrice(quantity * event.target.value);
+      const productOptionPrice = product.productOptions.filter(
+        (x) => x.option.toLowerCase() === event.target.value.toLowerCase()
+      )[0].price;
+      setPrice(quantity * selectedUnityOption + quantity * productOptionPrice);
     }
   }
 
@@ -116,41 +172,62 @@ function Product(props) {
           </Col>
         </Row>
         <Row>
-          <Col md={6} sm={12}>
+          <Col lg={6} md={5} sm={12}>
             <ImageGallery
               items={images}
               showFullscreenButton={false}
               showPlayButton={false}
             />
           </Col>
-          <Col md={6} sm={12}>
-            <br className="d-block d-sm-none" />
+          <Col lg={6} md={7} sm={12}>
+            <br className="d-block d-md-none" />
             <p dangerouslySetInnerHTML={{ __html: product.description }} />
             <p>
               <span className="text-bold">Ingédients</span>
             </p>
             <p>{product.ingredient}</p>
-            <hr />
-            <p>
-              <span className="text-bold">Categorie:</span> {product.category}
-            </p>
-            <p>
-              <span className="text-bold">Tags:</span>{" "}
-              <span> {product.tags}</span>
-            </p>
+            {product.nutritionalValue && (
+              <>
+                <p>
+                  <span className="text-bold">Valeur nutritionnelle</span>
+                </p>
+                <p>{product.nutritionalValue}</p>
+              </>
+            )}
             <Row>
-              <Col lg={4} md={6} sm={4} xs={5}>
+              <Col lg={5} md={6} sm={4} xs={5}>
                 <Form.Group>
                   <Form.Control
                     as="select"
                     name="price-option"
                     onChange={handlePrice}
+                    value={selectedUnityOption}
+                  >
+                    {unityOptions.map((x) => {
+                      return (
+                        <option key={x.price} value={x.price}>
+                          {x.unity} ({x.price} TND)
+                        </option>
+                      );
+                    })}
+                  </Form.Control>
+                </Form.Group>
+              </Col>
+              <Col lg={5} md={6} sm={4} xs={5}>
+                <Form.Group>
+                  <Form.Control
+                    as="select"
+                    name="product-option"
+                    onChange={handlePrice}
                     value={selectedProductOption}
                   >
                     {productOptions.map((x) => {
                       return (
-                        <option key={x.price} value={x.price}>
-                          {x.unity} ({x.price} TND)
+                        <option key={x.option} value={x.option}>
+                          {x.option}{" "}
+                          {x.price !== 0
+                            ? "(+" + x.price + " TND)"
+                            : "(Gratuit)"}
                         </option>
                       );
                     })}
@@ -167,7 +244,7 @@ function Product(props) {
                   />
                 </Form.Group>
               </Col>
-              <Col lg={6} md={9} sm={6} xs={5}>
+              <Col lg={5} md={9} sm={6} xs={5}>
                 <Form.Group>
                   <Button
                     variant="outline-primary"

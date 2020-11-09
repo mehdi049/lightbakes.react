@@ -2,9 +2,24 @@
   {
     "id": "1",
     "title": "Beurre de cacahuète",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur. <br/> Existe en crunchy ou creamy. ",
-    "ingredient": "Cacahuète, miel",
-    "sellingOptions": [
+    "description": "Ce beurre de cacahuètes a une haute teneur en protéine contribuant à la croissance et à l'entretien de la masse musculaire. <br/><br/> Cette pâte à tartiner est disponible en plusieurs  formats en texture onctueuse ou croustillante. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% de cacahuètes entières grillées.",
+    "nutritionalValue": "616 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 8
@@ -21,9 +36,24 @@
   {
     "id": "2",
     "title": "Beurre de sesame",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur. <br/> Existe en crunchy ou creamy. ",
-    "ingredient": "Sesame, miel",
-    "sellingOptions": [
+    "description": "Cette pâte à tartiner  est une purée issue du broyage des graines de sésame. Riche en fibres et en oligoéléments, cet incontournable de la cuisine proche-orientale regorge de bienfaits pour la santé. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% de sésame entières grillées.",
+    "nutritionalValue": "573 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 8
@@ -40,9 +70,24 @@
   {
     "id": "3",
     "title": "Beurre de noisette",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur. <br/> Existe en crunchy ou creamy. ",
-    "ingredient": "Noisette, miel",
-    "sellingOptions": [
+    "description": "Le beurre de noisettes a un goût fantastique comme vous pourriez vous y attendre avec un beurre naturel, nous n'y ajoutons ni sucre, ni sel, ni conservateurs, ni huile de palme. <br/> Le beurre de noisettes regorge tout simplement de bienfaits naturels, c'est une excellente source de protéines et de fibres. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% de noisette entières grillées.",
+    "nutritionalValue": "654 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 13.5
@@ -58,10 +103,25 @@
   },
   {
     "id": "4",
-    "title": "Beurre d’amande",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur. <br/> Existe en crunchy ou creamy. ",
-    "ingredient": "Amande, miel",
-    "sellingOptions": [
+    "title": "Beurre d’amandes",
+    "description": "Le beurre d'amande est tout simplement un beurre 100 % naturel, préparé uniquement avec des amandes. <br/><br/> Le beurre d'amandes est une parfaite addition pour tout régime alimentaire, et il est particulièrement utile comme snack, sain et riche en protéines, à consommer entre les repas. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% d’amandes émondées.",
+    "nutritionalValue": "612 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 12.5
@@ -77,10 +137,25 @@
   },
   {
     "id": "5",
-    "title": "Beurre de noix de cajou",
-    "description": "Le beurre de noix de cajou est une pâte à tartiner préparée à partir de noix de cajou cuites au four ou rôties. Il est crémeux et riche en saveurs. Longtemps entreposé, ses huiles et ses solides se séparent facilement. Il est riche en protéines, acides gras insaturés et vitamine B. <br/> Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
-    "ingredient": "Noix de cajou",
-    "sellingOptions": [
+    "title": "Beurre de cajou",
+    "description": "Le beurre de cajou est tout simplement un beurre délicieux 100 % naturel, préparé uniquement avec des noix de cajou. <br/><br/> On appelle souvent les noix de cajou le 'comprimé de vitamines naturel', car elles regorgent de vitamines et de minéraux comme le fer, le phosphore, le zinc, le cuivre et le manganèse. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% noix de cajou entières grillées.",
+    "nutritionalValue": "576 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 14.5
@@ -97,9 +172,24 @@
   {
     "id": "6",
     "title": "Beurre de pistache",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
-    "ingredient": "Pistache, miel",
-    "sellingOptions": [
+    "description": "La pâte de pistache est 100% naturelle et ne contient que des pistaches rôties. Ce beurre de pistache n'est pas que naturel et délicieux, il a aussi une haute teneur en protéine et en graisses mono-insaturées sans aucun sucre, additif, sel ou huile de plame. Cette crème est aussi riche en vitamines et minéraux. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% de pistaches rôties.",
+    "nutritionalValue": "615 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 23
@@ -117,9 +207,24 @@
   {
     "id": "7",
     "title": "Beurre de noix",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
-    "ingredient": "Noix, miel",
-    "sellingOptions": [
+    "description": "Le beurre de noix est tout simplement un beurre 100 % naturel, préparé uniquement avec des noix. <br/><br/> Grâce à sa haute teneur en fibres qui permet de ressentir rapidement un effet de satiété, elle est un coupe-faim idéal pour les personnes qui suivent un régime. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
+    "ingredient": "100% de noix grillés.",
+    "nutritionalValue": "650 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 16
@@ -136,9 +241,9 @@
   {
     "id": "8",
     "title": "Cookies",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
+    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
     "ingredient": "Beurre de noisette et cacahuètes,amande,cacahuète, pépites de chocolat noir, miel, flocon d’avoine.",
-    "sellingOptions": [
+    "unityOptions": [
       {
         "unity": "100 gr",
         "price": 3
@@ -163,9 +268,20 @@
   {
     "id": "9",
     "title": "Muffin cacao",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
+    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
     "ingredient": "Cacao,miel,farine d’avoine, huile de colza.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "1 pièce",
         "price": 1.5
@@ -188,7 +304,18 @@
     "title": "Brownies",
     "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
     "ingredient": "Cacao,miel,farine d’avoine, huile de colza.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "1 pièce",
         "price": 1.5
@@ -201,9 +328,20 @@
   {
     "id": "11",
     "title": "Fondant",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
+    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
     "ingredient": "Cacao,miel,farine d’avoine, huile de colza.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "1 pièce",
         "price": 1.5
@@ -216,9 +354,20 @@
   {
     "id": "12",
     "title": "Boules d’energie",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur <br/> Existe en crunchy ou creamy.",
+    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
     "ingredient": "Cacahuète,miel,datte,amande,beurre cacahuètes.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "1 pièce",
         "price": 2.5
@@ -245,7 +394,18 @@
     "title": "Granola standard",
     "description": "Notre Granola maison est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
     "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 8
@@ -268,7 +428,18 @@
     "title": "Granola bar",
     "description": "Notre Granola maison est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
     "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 1
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "1 pièce",
         "price": 2.5
@@ -283,7 +454,14 @@
     "title": "Sauce pesto",
     "description": "Notre sauce pesto est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
     "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
-    "sellingOptions": [
+    "nutritionalValue": "0 Kcal / 100 gr",
+    "productOptions": [
+      {
+        "option": "naturel",
+        "price": 0
+      }
+    ],
+    "unityOptions": [
       {
         "unity": "200 gr",
         "price": 9

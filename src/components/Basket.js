@@ -114,14 +114,10 @@ function Basket() {
                 <Table responsive bordered>
                   <thead>
                     <tr>
-                      <th className="text-bold">#</th>
                       <th className="text-bold">Produit</th>
-                      <th className="text-bold">Unité</th>
                       <th className="text-bold">Quantité</th>
                       <th className="text-bold">Prix</th>
-                      <th className="text-bold" style={{ width: "100px" }}>
-                        Action
-                      </th>
+                      <th className="text-bold" style={{ width: "100px" }}></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -129,11 +125,11 @@ function Basket() {
                       const path = "/product/" + x.id;
                       return (
                         <tr key={i}>
-                          <td>{i + 1}</td>
                           <td>
-                            <Link to={path}>{x.product}</Link>
+                            <Link to={path}>
+                              {x.product} {x.option} ({x.unity})
+                            </Link>
                           </td>
-                          <td>{x.unity}</td>
                           <td>{x.quantity}</td>
                           <td>{x.totalPrice} TND</td>
                           <td>
@@ -148,7 +144,7 @@ function Basket() {
                       );
                     })}
                     <tr>
-                      <td colSpan={4} className="text-right text-bold">
+                      <td colSpan={2} className="text-right text-bold">
                         Total
                       </td>
                       <td className="text-bold">{totalPrice} TND</td>
@@ -157,9 +153,11 @@ function Basket() {
                 </Table>
               </Col>
             </Row>
+
             <Row>
               <Col className="text-right">
                 <Form>
+                  {/*
                   <Form.Group>
                     <Form.Control
                       type="text"
@@ -197,6 +195,7 @@ function Basket() {
                       onChange={handleCustomerInfo}
                     />
                   </Form.Group>
+                   */}
                   <Button
                     variant="outline-primary"
                     type="button"
