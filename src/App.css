@@ -31,7 +31,8 @@ a:hover {
   border-bottom: 2px solid #cb7152;
 }
 
-.text-bold {
+.text-bold,
+b {
   font-weight: 600;
 }
 
@@ -91,6 +92,14 @@ a:hover {
 
 .btn-outline-primary:focus {
   box-shadow: none;
+}
+
+.btn-secondary {
+  background: rgb(37 37 37) !important;
+}
+
+.modal-content {
+  border-radius: 0px;
 }
 
 .border-orange {

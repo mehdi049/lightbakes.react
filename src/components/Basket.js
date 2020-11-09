@@ -7,6 +7,7 @@ import {
   Button,
   Form,
   Alert,
+  Modal,
 } from "react-bootstrap";
 import Header from "./Header";
 import ContactSection from "./ContactSection";
@@ -23,12 +24,21 @@ function Basket() {
   );
   const [totalPrice, setTotalPrice] = useState();
 
-  const [customerInfo, setCustomerInfo] = useState({
-    name: "",
-    email: "",
-    tel: "",
-    address: "",
-  });
+  const [customerInfo, setCustomerInfo] = useState(
+    localStorage.getItem("customerInfo") !== null
+      ? JSON.parse(localStorage.getItem("customerInfo"))
+      : {
+          name: "",
+          email: "",
+          tel: "",
+          address: "",
+        }
+  );
+
+  /** modal hooks */
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   /** toast hooks */
   const [displayToast, setDisplayToast] = useState(false);
@@ -68,15 +78,17 @@ function Basket() {
   }
 
   function sendOrder() {
+    localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
+    localStorage.removeItem("basket");
+    setBasketItem([]);
+    toastHandler("Commande envoyée avec succés.", "success");
+
     setCustomerInfo({
       name: "",
       email: "",
       tel: "",
       address: "",
     });
-    localStorage.removeItem("basket");
-    setBasketItem([]);
-    toastHandler("Commande envoyée avec succés.", "success");
   }
 
   useEffect(() => {
@@ -151,61 +163,83 @@ function Basket() {
                     </tr>
                   </tbody>
                 </Table>
+
+                <p className="text-italic">
+                  <b>Note:</b> Le panier sera réinitialisé aprés le passage de
+                  la commande.
+                </p>
               </Col>
             </Row>
 
             <Row>
               <Col className="text-right">
-                <Form>
-                  {/*
-                  <Form.Group>
-                    <Form.Control
-                      type="text"
-                      placeholder="Nom et prénom / nom de l'entreprise"
-                      name="name"
-                      value={customerInfo.name}
-                      onChange={handleCustomerInfo}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Control
-                      type="email"
-                      placeholder="adresse email"
-                      name="email"
-                      value={customerInfo.email}
-                      onChange={handleCustomerInfo}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Control
-                      type="text"
-                      placeholder="Num. Tel"
-                      name="tel"
-                      value={customerInfo.tel}
-                      onChange={handleCustomerInfo}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Control
-                      as="textarea"
-                      rows="5"
-                      placeholder="Address"
-                      name="address"
-                      value={customerInfo.address}
-                      onChange={handleCustomerInfo}
-                    />
-                  </Form.Group>
-                   */}
-                  <Button
-                    variant="outline-primary"
-                    type="button"
-                    onClick={sendOrder}
-                  >
-                    Passer une commande
-                  </Button>
-                </Form>
+                <Button
+                  variant="outline-primary"
+                  type="button"
+                  onClick={handleShow}
+                >
+                  Passer la commande
+                </Button>
               </Col>
             </Row>
+
+            <Modal
+              show={show}
+              onHide={handleClose}
+              backdrop="static"
+              keyboard={false}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Confirmer la commande</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form.Group>
+                  <Form.Control
+                    type="text"
+                    placeholder="Nom et prénom / nom de l'entreprise"
+                    name="name"
+                    value={customerInfo.name}
+                    onChange={handleCustomerInfo}
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    type="email"
+                    placeholder="adresse email"
+                    name="email"
+                    value={customerInfo.email}
+                    onChange={handleCustomerInfo}
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    type="text"
+                    placeholder="Num. Tel"
+                    name="tel"
+                    value={customerInfo.tel}
+                    onChange={handleCustomerInfo}
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    as="textarea"
+                    rows="5"
+                    placeholder="Address"
+                    name="address"
+                    value={customerInfo.address}
+                    onChange={handleCustomerInfo}
+                  />
+                </Form.Group>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Annuler
+                </Button>
+                <Button variant="outline-primary" onClick={sendOrder}>
+                  Confirmer
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </>
         )}
         <br />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import { Parallax } from "react-parallax";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,8 +6,57 @@ import {
   faInstagramSquare,
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import ToastMessage from "./_sharedComponents/ToastMessage";
 
 function ContactSection() {
+  const [contactInfo, setContactInfo] = useState({
+    name: "",
+    email: "",
+    tel: "",
+    message: "",
+  });
+
+  /** toast hooks */
+  const [displayToast, setDisplayToast] = useState(false);
+  const [toastType, setToastType] = useState();
+  const [toastMessage, setToastMessage] = useState();
+
+  /** toast function */
+  function toastHandler(message, type) {
+    if (type === undefined) {
+      setDisplayToast(false);
+    } else {
+      setDisplayToast(true);
+      setToastMessage(message);
+      setToastType(type);
+    }
+  }
+
+  function handleContactInfo(event) {
+    const _contactInfo = {
+      ...contactInfo,
+      [event.target.name]: event.target.value,
+    };
+    setContactInfo(_contactInfo);
+  }
+
+  function sendEmail() {
+    if (contactInfo.name === "")
+      return toastHandler("Le champ 'nom et prénom' est requis", "error");
+    if (contactInfo.email === "")
+      return toastHandler("Le champ 'email' est requis", "error");
+    if (contactInfo.tel === "")
+      return toastHandler("Le champ 'Num. Tél' est requis", "error");
+
+    setContactInfo({
+      name: "",
+      email: "",
+      tel: "",
+      message: "",
+    });
+    toastHandler("Email envoyé avec succés.", "success");
+  }
+
   return (
     <div id="contact-section">
       <Parallax
@@ -44,12 +93,38 @@ function ContactSection() {
                 <Row>
                   <Col>
                     <Form.Group>
-                      <Form.Control type="text" placeholder="Nom et prénom" />
+                      <Form.Control
+                        type="text"
+                        name="name"
+                        placeholder="Nom et prénom *"
+                        onChange={handleContactInfo}
+                        value={contactInfo.name}
+                      />
                     </Form.Group>
                   </Col>
                   <Col>
                     <Form.Group>
-                      <Form.Control type="email" placeholder="address email" />
+                      <Form.Control
+                        type="text"
+                        name="email"
+                        placeholder="address email *"
+                        onChange={handleContactInfo}
+                        value={contactInfo.email}
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <br />
+                <Row>
+                  <Col>
+                    <Form.Group>
+                      <Form.Control
+                        type="text"
+                        name="tel"
+                        placeholder="Num. Tél *"
+                        onChange={handleContactInfo}
+                        value={contactInfo.tel}
+                      />
                     </Form.Group>
                   </Col>
                 </Row>
@@ -59,8 +134,11 @@ function ContactSection() {
                     <Form.Group>
                       <Form.Control
                         as="textarea"
-                        rows="7"
+                        rows="4"
                         placeholder="message..."
+                        name="message"
+                        onChange={handleContactInfo}
+                        value={contactInfo.message}
                       />
                     </Form.Group>
                   </Col>
@@ -72,7 +150,8 @@ function ContactSection() {
                       variant="outline-primary"
                       size="lg"
                       block
-                      type="submit"
+                      type="button"
+                      onClick={sendEmail}
                     >
                       Envoyer
                     </Button>
@@ -83,6 +162,13 @@ function ContactSection() {
           </Row>
         </Container>
       </Parallax>
+
+      <ToastMessage
+        show={displayToast}
+        toastHandler={toastHandler}
+        message={toastMessage}
+        type={toastType}
+      />
     </div>
   );
 }
