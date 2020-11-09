@@ -195,7 +195,7 @@ function Product(props) {
               </>
             )}
             <Row>
-              <Col lg={5} md={6} sm={4} xs={5}>
+              <Col lg={5} md={6} sm={4} xs={6}>
                 <Form.Group>
                   <Form.Control
                     as="select"
@@ -213,7 +213,7 @@ function Product(props) {
                   </Form.Control>
                 </Form.Group>
               </Col>
-              <Col lg={5} md={6} sm={4} xs={5}>
+              <Col lg={5} md={6} sm={4} xs={6}>
                 <Form.Group>
                   <Form.Control
                     as="select"
@@ -234,7 +234,7 @@ function Product(props) {
                   </Form.Control>
                 </Form.Group>
               </Col>
-              <Col lg={2} md={3} sm={2} xs={2}>
+              <Col lg={2} md={3} sm={2} xs={3}>
                 <Form.Group>
                   <Form.Control
                     onChange={handlePrice}
@@ -244,7 +244,7 @@ function Product(props) {
                   />
                 </Form.Group>
               </Col>
-              <Col lg={5} md={9} sm={6} xs={5}>
+              <Col lg={5} md={9} sm={6} xs={9}>
                 <Form.Group>
                   <Button
                     variant="outline-primary"
