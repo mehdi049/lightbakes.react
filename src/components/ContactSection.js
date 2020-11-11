@@ -7,6 +7,7 @@ import {
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import ToastMessage from "./_sharedComponents/ToastMessage";
+import * as api from "./_api/Api";
 
 function ContactSection() {
   const [contactInfo, setContactInfo] = useState({
@@ -48,13 +49,20 @@ function ContactSection() {
     if (contactInfo.tel === "")
       return toastHandler("Le champ 'Num. Tél' est requis", "error");
 
-    setContactInfo({
-      name: "",
-      email: "",
-      tel: "",
-      message: "",
-    });
-    toastHandler("Email envoyé avec succés.", "success");
+    api
+      .sendContact(contactInfo)
+      .then(() => {
+        toastHandler("Email envoyé avec succés.", "success");
+        setContactInfo({
+          name: "",
+          email: "",
+          tel: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        toastHandler("Une erreur s'est produite, veuillez réessayer.", "error");
+      });
   }
 
   return (
