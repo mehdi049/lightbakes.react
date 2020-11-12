@@ -93,6 +93,8 @@ function Product(props) {
         x.unity.toLowerCase() === productUnity.toLowerCase()
     );
 
+    if (quantity === "") return toastHandler("Quantité incorrecte", "error");
+
     if (productsToAddCheck.length === 0)
       productsToAdd.push({
         id: product.id,
@@ -126,11 +128,7 @@ function Product(props) {
 
   function handlePrice(event) {
     if (event.target.name === "quantity") {
-      if (
-        isNaN(event.target.value) ||
-        parseInt(event.target.value) === 0 ||
-        event.target.value === ""
-      )
+      if (isNaN(event.target.value) || parseInt(event.target.value) === 0)
         return toastHandler("Quantité incorrecte", "error");
       const productOptionPrice = product.productOptions.filter(
         (x) => x.option.toLowerCase() === selectedProductOption.toLowerCase()

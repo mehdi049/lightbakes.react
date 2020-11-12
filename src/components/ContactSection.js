@@ -45,9 +45,9 @@ function ContactSection() {
 
   function sendEmail() {
     if (contactInfo.name === "")
-      return toastHandler("Le champ 'nom et prénom' est requis", "error");
+      return toastHandler("Le champ 'Nom et prénom' est requis", "error");
     if (contactInfo.email === "")
-      return toastHandler("Le champ 'email' est requis", "error");
+      return toastHandler("Le champ 'Email' est requis", "error");
     if (contactInfo.tel === "")
       return toastHandler("Le champ 'Num. Tél' est requis", "error");
 
@@ -121,7 +121,7 @@ function ContactSection() {
                       <Form.Control
                         type="text"
                         name="email"
-                        placeholder="adresse email"
+                        placeholder="Email"
                         onChange={handleContactInfo}
                         value={contactInfo.email}
                       />
@@ -149,7 +149,7 @@ function ContactSection() {
                       <Form.Control
                         as="textarea"
                         rows="4"
-                        placeholder="message..."
+                        placeholder="Message..."
                         name="message"
                         onChange={handleContactInfo}
                         value={contactInfo.message}

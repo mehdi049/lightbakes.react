@@ -12,7 +12,7 @@ import {
 import Header from "./Header";
 import ContactSection from "./ContactSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import ToastMessage from "./_sharedComponents/ToastMessage";
 import { Link } from "react-router-dom";
 import * as api from "./_api/Api";
@@ -80,6 +80,15 @@ function Basket() {
   }
 
   function sendOrder() {
+    if (customerInfo.name === "")
+      return toastHandler("Le champ 'Nom et prénom' est requis", "error");
+    if (customerInfo.email === "")
+      return toastHandler("Le champ 'Email' est requis", "error");
+    if (customerInfo.tel === "")
+      return toastHandler("Le champ 'Num. Tél' est requis", "error");
+    if (customerInfo.address === "")
+      return toastHandler("Le champ 'Adresse' est requis", "error");
+
     localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
     setIsDisabled(true);
     api
@@ -171,6 +180,10 @@ function Basket() {
                 </Table>
 
                 <p className="text-italic">
+                  <FontAwesomeIcon icon={faTruck} size="1x" /> &nbsp;{" "}
+                  <b>Paiement à la livraison.</b>
+                  <br />
+                  <br />
                   <b>Note:</b> Le panier sera réinitialisé aprés le passage de
                   la commande.
                 </p>
@@ -211,7 +224,7 @@ function Basket() {
                 <Form.Group>
                   <Form.Control
                     type="email"
-                    placeholder="adresse email"
+                    placeholder="Email"
                     name="email"
                     value={customerInfo.email}
                     onChange={handleCustomerInfo}
@@ -220,7 +233,7 @@ function Basket() {
                 <Form.Group>
                   <Form.Control
                     type="text"
-                    placeholder="Num. Tel"
+                    placeholder="Num. Tél"
                     name="tel"
                     value={customerInfo.tel}
                     onChange={handleCustomerInfo}
@@ -230,7 +243,7 @@ function Basket() {
                   <Form.Control
                     as="textarea"
                     rows="5"
-                    placeholder="Address"
+                    placeholder="Adresse"
                     name="address"
                     value={customerInfo.address}
                     onChange={handleCustomerInfo}
