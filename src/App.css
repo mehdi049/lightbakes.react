@@ -1,7 +1,8 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap");
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial";
   font-weight: 400;
 }
 
@@ -95,7 +96,7 @@ b {
 }
 
 .btn-secondary {
-  background: rgb(37 37 37) !important;
+  background: rgb(37, 37, 37) !important;
 }
 
 .btn-outline-primary:disabled {
@@ -195,12 +196,12 @@ b {
 
 /** header **/
 .navbar {
-  background: rgb(1 1 1 / 67%);
+  background: rgba(1, 1, 1, 0.67);
 }
 
 .header-black-bg {
-  background: rgb(37 37 37) !important;
-  box-shadow: 1px 1px 8px rgb(58 58 58);
+  background: rgb(37, 37, 37) !important;
+  box-shadow: 1px 1px 8px rgb(58, 58, 58);
 }
 
 .navbar-dark .navbar-brand,
@@ -309,7 +310,7 @@ b {
 /** footer **/
 footer {
   padding: 10px;
-  background: rgb(37 37 37);
+  background: rgb(37, 37, 37);
   color: #fff;
 }
 
@@ -328,8 +329,8 @@ footer {
 .image-gallery-left-nav .image-gallery-svg {
   height: 60px;
   width: 60px;
-  background: rgb(255 255 255);
-  color: rgb(25 25 25 / 95%);
+  background: rgb(255, 255, 255);
+  color: rgb(25, 25, 25, 0.95);
   border-radius: 50px;
 }
 
@@ -375,7 +376,7 @@ footer {
 /** small screen **/
 @media (max-width: 768px) {
   .navbar {
-    background: rgb(1 1 1 / 74%);
+    background: rgb(1, 1, 1, 0.74);
   }
   .navbar-nav {
     margin-left: 0px;
