@@ -13,8 +13,8 @@ function GalleryPage() {
   const photos = [
     {
       src: require("../../src/images/img1.jpg"),
-      width: 2,
-      height: 1,
+      width: 3,
+      height: 2,
     },
     {
       src: require("../../src/images/img2.jpg"),
@@ -23,8 +23,8 @@ function GalleryPage() {
     },
     {
       src: require("../../src/images/img3.jpg"),
-      width: 2,
-      height: 1,
+      width: 3,
+      height: 2,
     },
     {
       src: require("../../src/images/img4.jpg"),
@@ -48,12 +48,12 @@ function GalleryPage() {
     },
     {
       src: require("../../src/images/img8.jpg"),
-      width: 4,
+      width: 3,
       height: 2,
     },
     {
       src: require("../../src/images/img9.jpg"),
-      width: 4,
+      width: 3,
       height: 2,
     },
     {
@@ -70,6 +70,21 @@ function GalleryPage() {
       src: require("../../src/images/img12.jpg"),
       width: 2,
       height: 1,
+    },
+    {
+      src: require("../../src/images/img13.jpg"),
+      width: 3,
+      height: 2,
+    },
+    {
+      src: require("../../src/images/img14.jpg"),
+      width: 3,
+      height: 2,
+    },
+    {
+      src: require("../../src/images/img15.jpg"),
+      width: 3,
+      height: 2,
     },
   ];
 
