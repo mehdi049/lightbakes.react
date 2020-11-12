@@ -5,6 +5,7 @@ import Header from "./Header";
 import data from "./data/product.json";
 import ToastMessage from "./_sharedComponents/ToastMessage";
 import SimilarProduct from "./SimilarProduct";
+import ContactSection from "./ContactSection";
 
 function Product(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -267,6 +268,8 @@ function Product(props) {
         changeProduct={changeProduct}
         id={product.id}
       />
+
+      <ContactSection />
 
       <ToastMessage
         show={displayToast}
