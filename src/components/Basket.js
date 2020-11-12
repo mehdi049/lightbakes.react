@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import ToastMessage from "./_sharedComponents/ToastMessage";
 import { Link } from "react-router-dom";
+import * as api from "./_api/Api";
 
 function Basket() {
   const [basketItem, setBasketItem] = useState(
@@ -23,6 +24,7 @@ function Basket() {
       : []
   );
   const [totalPrice, setTotalPrice] = useState();
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const [customerInfo, setCustomerInfo] = useState(
     localStorage.getItem("customerInfo") !== null
@@ -72,23 +74,27 @@ function Basket() {
   function handleCustomerInfo(event) {
     const updatedCustomerInfo = {
       ...customerInfo,
-      [event.target.name]: [event.target.value],
+      [event.target.name]: event.target.value,
     };
     setCustomerInfo(updatedCustomerInfo);
   }
 
   function sendOrder() {
     localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
-    localStorage.removeItem("basket");
-    setBasketItem([]);
-    toastHandler("Commande envoyée avec succés.", "success");
-
-    setCustomerInfo({
-      name: "",
-      email: "",
-      tel: "",
-      address: "",
-    });
+    setIsDisabled(true);
+    api
+      .sendOrder(basketItem, customerInfo)
+      .then(() => {
+        localStorage.removeItem("basket");
+        setBasketItem([]);
+        toastHandler("Commande envoyée avec succés.", "success");
+        setIsDisabled(false);
+        setShow(false);
+      })
+      .catch((error) => {
+        toastHandler("Une erreur s'est produite, veuillez réessayer.", "error");
+        setIsDisabled(false);
+      });
   }
 
   useEffect(() => {
@@ -235,7 +241,11 @@ function Basket() {
                 <Button variant="secondary" onClick={handleClose}>
                   Annuler
                 </Button>
-                <Button variant="outline-primary" onClick={sendOrder}>
+                <Button
+                  variant="outline-primary"
+                  onClick={sendOrder}
+                  disabled={isDisabled}
+                >
                   Confirmer
                 </Button>
               </Modal.Footer>

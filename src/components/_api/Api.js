@@ -26,9 +26,9 @@ export function sendOrder(basketItem, customerInfo) {
       "Content-Type": "application/json",
     },
     cache: "no-cache",
-    body: {
-      basket: JSON.stringify(basketItem),
-      customerInfo: JSON.stringify(customerInfo),
-    },
+    body: JSON.stringify({
+      orders: JSON.stringify(basketItem),
+      customerInfo: customerInfo,
+    }),
   }).then(ResponseHandler);
 }

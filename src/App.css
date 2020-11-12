@@ -98,6 +98,10 @@ b {
   background: rgb(37 37 37) !important;
 }
 
+.btn-outline-primary:disabled {
+  color: #000000;
+}
+
 .modal-content {
   border-radius: 0px;
 }

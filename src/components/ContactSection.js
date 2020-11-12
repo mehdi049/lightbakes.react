@@ -17,6 +17,8 @@ function ContactSection() {
     message: "",
   });
 
+  const [isDisabled, setIsDisabled] = useState(false);
+
   /** toast hooks */
   const [displayToast, setDisplayToast] = useState(false);
   const [toastType, setToastType] = useState();
@@ -49,6 +51,7 @@ function ContactSection() {
     if (contactInfo.tel === "")
       return toastHandler("Le champ 'Num. Tél' est requis", "error");
 
+    setIsDisabled(true);
     api
       .sendContact(contactInfo)
       .then(() => {
@@ -59,9 +62,12 @@ function ContactSection() {
           tel: "",
           message: "",
         });
+
+        setIsDisabled(false);
       })
       .catch((error) => {
         toastHandler("Une erreur s'est produite, veuillez réessayer.", "error");
+        setIsDisabled(false);
       });
   }
 
@@ -104,7 +110,7 @@ function ContactSection() {
                       <Form.Control
                         type="text"
                         name="name"
-                        placeholder="Nom et prénom *"
+                        placeholder="Nom et prénom"
                         onChange={handleContactInfo}
                         value={contactInfo.name}
                       />
@@ -115,7 +121,7 @@ function ContactSection() {
                       <Form.Control
                         type="text"
                         name="email"
-                        placeholder="address email *"
+                        placeholder="adresse email"
                         onChange={handleContactInfo}
                         value={contactInfo.email}
                       />
@@ -129,7 +135,7 @@ function ContactSection() {
                       <Form.Control
                         type="text"
                         name="tel"
-                        placeholder="Num. Tél *"
+                        placeholder="Num. Tél"
                         onChange={handleContactInfo}
                         value={contactInfo.tel}
                       />
@@ -160,6 +166,7 @@ function ContactSection() {
                       block
                       type="button"
                       onClick={sendEmail}
+                      disabled={isDisabled}
                     >
                       Envoyer
                     </Button>
