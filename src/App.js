@@ -6,9 +6,12 @@ import Product from "./components/Product";
 import Gallery from "./components/Gallery";
 import Menu from "./components/Menu";
 import Basket from "./components/Basket";
+import ReactGA from "react-ga";
 import "./App.css";
 
 function App() {
+  ReactGA.initialize("G-JX4ZFD5WG0");
+  ReactGA.pageview(window.location.pathname + window.location.search);
   return (
     <>
       <Router>
