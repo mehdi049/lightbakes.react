@@ -242,7 +242,7 @@
     "id": "8",
     "title": "Cookies",
     "description": "Cookie un jour cookie toujours! On ne refuse jamais de délicieux, healthy et crunchy cookies pour le gouter avec flocons d'avoine et fruits secs. <br/><br/>Yummy irrésistible!",
-    "ingredient": "Amande, noisette , cacahuète, beurre d'amande, beurre de noisette , blanc d'oeuf.",
+    "ingredient": "Amande, noisette, cacahuète, beurre d'amande, beurre de noisette, blanc d'oeuf.",
     "productOptions": [
       {
         "option": "avec miel",
@@ -307,7 +307,7 @@
     ],
     "category": "Muffin",
     "tags": "Health - Recipe - Cacao",
-    "images": ["img9.jpg"]
+    "images": ["img9.jpg", "img9-2.jpg"]
   },
   {
     "id": "10",
@@ -367,7 +367,7 @@
     ],
     "category": "Muffin",
     "tags": "Health - Recipe - Chocolat",
-    "images": ["img11.jpg"]
+    "images": ["img11.jpg", "img11-2.jpg"]
   },
   {
     "id": "12",
@@ -446,7 +446,7 @@
     ],
     "category": "Granola",
     "tags": "Health - Recipe - Granola",
-    "images": ["img13.jpg"]
+    "images": ["img13.jpg", "img13-2.jpg", "img13-3.jpg"]
   },
   {
     "id": "14",
