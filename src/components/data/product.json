@@ -12,11 +12,11 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
@@ -31,7 +31,7 @@
     ],
     "category": "Cream",
     "tags": "Health - Recipe - Creamy",
-    "images": ["img1.jpg"]
+    "images": ["img1.jpg", "img1-2.jpg"]
   },
   {
     "id": "2",
@@ -46,11 +46,11 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
@@ -80,11 +80,11 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
@@ -99,13 +99,13 @@
     ],
     "category": "Cream",
     "tags": "Health - Recipe - Creamy",
-    "images": ["img3.jpg"]
+    "images": ["img3.jpg", "img3-2.jpg"]
   },
   {
     "id": "4",
-    "title": "Beurre d’amandes",
+    "title": "Beurre d'amandes",
     "description": "Le beurre d'amande est tout simplement un beurre 100 % naturel, préparé uniquement avec des amandes. <br/><br/> Le beurre d'amandes est une parfaite addition pour tout régime alimentaire, et il est particulièrement utile comme snack, sain et riche en protéines, à consommer entre les repas. <br/><br/> <u class='text-small'>Remarque:</u> <span class='text-small'> Ce produit peut subir un certain degré de séparation, laissant une couche d'huile sur la surface. Cette séparation est parfaitement naturelle, et il vous suffit de mélanger le produit pour y remédier.</span>",
-    "ingredient": "100% d’amandes émondées.",
+    "ingredient": "100% d'amandes émondées.",
     "nutritionalValue": "612 Kcal / 100 gr",
     "productOptions": [
       {
@@ -114,17 +114,17 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
       {
         "unity": "200 gr",
-        "price": 12.5
+        "price": 13
       },
       {
         "unity": "500 gr",
@@ -148,17 +148,17 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
       {
         "unity": "200 gr",
-        "price": 14.5
+        "price": 15
       },
       {
         "unity": "500 gr",
@@ -182,11 +182,11 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
@@ -196,7 +196,7 @@
       },
       {
         "unity": "500 gr",
-        "price": 46
+        "price": 45
       }
     ],
 
@@ -217,11 +217,11 @@
       },
       {
         "option": "avec miel",
-        "price": 0
+        "price": 0.5
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0.5
       }
     ],
     "unityOptions": [
@@ -231,7 +231,7 @@
       },
       {
         "unity": "500 gr",
-        "price": 32
+        "price": 31
       }
     ],
     "category": "Cream",
@@ -241,9 +241,27 @@
   {
     "id": "8",
     "title": "Cookies",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
-    "ingredient": "Beurre de noisette et cacahuètes,amande,cacahuète, pépites de chocolat noir, miel, flocon d’avoine.",
+    "description": "Cookie un jour cookie toujours! On ne refuse jamais de délicieux, healthy et crunchy cookies pour le gouter avec flocons d'avoine et fruits secs. <br/><br/>Yummy irrésistible!",
+    "ingredient": "Amande, noisette , cacahuète, beurre d'amande, beurre de noisette , blanc d'oeuf.",
+    "productOptions": [
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
+      }
+    ],
     "unityOptions": [
+      {
+        "unity": "1 grande pièce",
+        "price": 1.8
+      },
       {
         "unity": "100 gr",
         "price": 3
@@ -255,44 +273,36 @@
       {
         "unity": "1 kg",
         "price": 30
-      },
-      {
-        "unity": "1 pièce",
-        "price": 1.8
       }
     ],
     "category": "Cookies",
     "tags": "Health - Recipe - Cookies",
-    "images": ["img8.jpg"]
+    "images": ["img8.jpg", "img8-2.jpg"]
   },
   {
     "id": "9",
     "title": "Muffin cacao",
     "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
-    "ingredient": "Cacao,miel,farine d’avoine, huile de colza.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "ingredient": "Cacao,miel,farine d'avoine, huile de colza.",
+    "nutritionalValue": "490 Kcal / Muffin",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec miel",
         "price": 0
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
       }
     ],
     "unityOptions": [
       {
         "unity": "1 pièce",
         "price": 1.5
-      },
-      {
-        "unity": "500 gr",
-        "price": 15
-      },
-      {
-        "unity": "1 kg",
-        "price": 30
       }
     ],
     "category": "Muffin",
@@ -302,17 +312,21 @@
   {
     "id": "10",
     "title": "Brownies",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
-    "ingredient": "Cacao,miel,farine d’avoine, huile de colza.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "description": "Délicieux, entièrement naturel et fait avec amour. <br/> Parfait pour les cadeaux clients, les cadeaux d'anniversaire.",
+    "ingredient": "Cacao, farine d’avoine, huile de coco/colza, blanc d’oeuf, lait.",
+    "nutritionalValue": "466 Kcal / 100 gr",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec miel",
         "price": 0
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
       }
     ],
     "unityOptions": [
@@ -323,22 +337,26 @@
     ],
     "category": "Muffin",
     "tags": "Health - Recipe - Chocolat",
-    "images": ["img10.jpg"]
+    "images": ["img10.jpg", "img10-2.jpg", "img10-3.jpg"]
   },
   {
     "id": "11",
     "title": "Fondant",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
-    "ingredient": "Cacao,miel,farine d’avoine, huile de colza.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "description": "Ah! le fameux fondant au chocolat... celui qui est capable de flinguer n'importe lequel de nos régimes tellement il est irrésistible! <br/><br/> Eh bien, c'est bel et bien fini ce temps-là, puisqu'on vous a trouvé une recette healthy, légère et sans matière grasse, plus aucune raison de se priver!",
+    "ingredient": "Cacao, farine d'avoine, huile de colza, blanc d'oeuf.",
+    "nutritionalValue": "338 Kcal / 100 gr",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec miel",
         "price": 0
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
       }
     ],
     "unityOptions": [
@@ -353,18 +371,22 @@
   },
   {
     "id": "12",
-    "title": "Boules d’energie",
-    "description": "Produit sans sucre ajouté, sans huile de palme, sans additifs, ni conservateur.",
-    "ingredient": "Cacahuète,miel,datte,amande,beurre cacahuètes.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "title": "Boules d'energie",
+    "description": "Ces boules d'énergie sont particulièrement intéressantes d'un point de vue nutritif car elles contiennent une forte proportion de protéines.",
+    "ingredient": "Amande, cacahuète, beurre d'amande beurre de cacahuètes, enrobé par caco et huile de coco",
+    "nutritionalValue": "55 Kcal / boule",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec miel",
         "price": 0
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
       }
     ],
     "unityOptions": [
@@ -374,35 +396,38 @@
       },
       {
         "unity": "250 gr",
-        "price": 10
+        "price": 12
       },
       {
         "unity": "500 gr",
-        "price": 19
+        "price": 23
       },
       {
         "unity": "1 kg",
-        "price": 38
+        "price": 45
       }
     ],
     "category": "Energy",
     "tags": "Health - Recipe - Energy",
-    "images": ["img12.jpg"]
+    "images": ["img12.jpg", "img12-2.jpg", "img12-3.jpg"]
   },
   {
     "id": "13",
     "title": "Granola standard",
-    "description": "Notre Granola maison est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
-    "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "description": "Enfin des mix de granola plein de goûts et de nutriments mais sans sucre raffiné. <br><br/>  Miel ou de sucre de dattes sur un max de fruits secs et de flocons pour un max d'énergie!",
+    "ingredient": "Flocons d'avoine, noisette, amande, noix n noix de cajou, sésame, cacahuète, graine de laine, graine de citrouille, graine de tournesol.",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec miel",
         "price": 0
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
       }
     ],
     "unityOptions": [
@@ -412,11 +437,11 @@
       },
       {
         "unity": "500 gr",
-        "price": 18
+        "price": 18.5
       },
       {
         "unity": "1 kg",
-        "price": 34
+        "price": 35
       }
     ],
     "category": "Granola",
@@ -426,17 +451,21 @@
   {
     "id": "14",
     "title": "Granola bar",
-    "description": "Notre Granola maison est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
-    "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "description": "De délicieuses barres aux fruits secs et flocons d'avoine, nappées de chocolat.",
+    "ingredient": "Flocons d'avoine, noisette, amande, noix n noix de cajou, sésame, cacahuète, graine de laine, grain de citrouille, graine de tournesol, beure d'amande et beurre de miel.",
+    "nutritionalValue": "471 Kcal / 100 gr",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec miel",
         "price": 0
       },
       {
         "option": "avec sucre stévia",
-        "price": 1
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
       }
     ],
     "unityOptions": [
@@ -447,28 +476,105 @@
     ],
     "category": "Granola",
     "tags": "Health - Recipe - Granola",
-    "images": ["img14.jpg"]
+    "images": ["img14.jpg", "img14-2.jpg", "img14-3.jpg"]
   },
   {
     "id": "15",
     "title": "Sauce pesto",
-    "description": "Notre sauce pesto est préparé avec beaucoup d'amour : une torréfaction minutieuse de chaque fruit sec, un par un, est nécessaire pour atteindre un goût optimal. Vient ensuite le miel de fleurs d'épices, unique en son genre qui va donner ce petit goût acidulé et enfin, pour la note gourmande : des éclats de chocolat noir !",
-    "ingredient": "Flocons d'avoine torréfiés au miel, agrémentés d'amandes, noix, noix de cajou, noisette, cacahouette, graines de courge ,tournesol et de sésame avec une touche de chocolat noir.",
-    "nutritionalValue": "0 Kcal / 100 gr",
+    "description": "La sauce pesto à base de basilic et noix de cajous accompagne divinement, les pates, salades ou sandwitchs.",
+    "ingredient": "Basilic, noix de cajou, huile d'olive, ail",
     "productOptions": [
       {
-        "option": "naturel",
+        "option": "avec sel",
+        "price": 0
+      },
+      {
+        "option": "sans sel",
         "price": 0
       }
     ],
     "unityOptions": [
       {
         "unity": "200 gr",
-        "price": 9
+        "price": 10
       }
     ],
     "category": "Sauce",
     "tags": "Health - Recipe - Sauce",
     "images": ["img15.jpg"]
+  },
+  {
+    "id": "16",
+    "title": "Fonds de tartes",
+    "description": "Pate à  farine complète ou farine d'avoine, idéale pour des tartes sucrées ou salées et surtout healthy.",
+    "ingredient": "Farine complète ou farine d'avoine, huile d'olive ou huile de colza.",
+    "productOptions": [
+      {
+        "option": "Basilic séché",
+        "price": 0
+      },
+      {
+        "option": "Romarin séché",
+        "price": 0
+      },
+      {
+        "option": "Thym séché",
+        "price": 0
+      },
+      {
+        "option": "Menthe séché",
+        "price": 0
+      }
+    ],
+    "unityOptions": [
+      {
+        "unity": "8 pièce X 6 cm",
+        "price": 3
+      },
+      {
+        "unity": "4 pièce X 8.5 cm",
+        "price": 2.5
+      },
+      {
+        "unity": "1 pièce X 18 cm",
+        "price": 3.5
+      }
+    ],
+    "category": "Tarte",
+    "tags": "Health - Recipe - Tarte",
+    "images": ["img16.jpg", "img16-2.jpg", "img16-3.jpg"]
+  },
+  {
+    "id": "17",
+    "title": "Healthy Nutella",
+    "description": "Vous êtes fun du Nutella et vous voulez garder la ligne, voici la solution, notre crunchy  healthy Nutella avec les noisettes et cacao, une tuerie!",
+    "ingredient": "Cacao, beurre de noisettes, noisettes hachées.",
+    "productOptions": [
+      {
+        "option": "avec miel",
+        "price": 0
+      },
+      {
+        "option": "avec sucre stévia",
+        "price": 0
+      },
+      {
+        "option": "sucre de datte",
+        "price": 0
+      }
+    ],
+    "unityOptions": [
+      {
+        "unity": "200 gr",
+        "price": 14
+      },
+      {
+        "unity": "500 gr",
+        "price": 27
+      }
+    ],
+    "category": "Nutella",
+    "tags": "Health - Recipe - Nutella",
+    "images": ["img17.jpg", "img17-2.jpg"]
   }
 ]

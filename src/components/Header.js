@@ -16,24 +16,24 @@ function Header(props) {
   return (
     <Navbar expand="lg" variant="dark" fixed="top" className={cls}>
       <Container>
-        <Link to="/" className="text-bold navbar-brand">
-          <img
-            src={require("../../src/images/logo/top-logo.png")}
-            alt="horizontal logo"
-          />
-        </Link>
+        {props.transparent ? (
+          <Nav.Link href="#home" className="text-bold navbar-brand">
+            <img
+              src={require("../../src/images/logo/top-logo.png")}
+              alt="horizontal logo"
+            />
+          </Nav.Link>
+        ) : (
+          <Link to="/" className="text-bold navbar-brand">
+            <img
+              src={require("../../src/images/logo/top-logo.png")}
+              alt="horizontal logo"
+            />
+          </Link>
+        )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {props.transparent ? (
-              <Nav.Link href="#home">A propos</Nav.Link>
-            ) : (
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  A propos
-                </Link>
-              </li>
-            )}
             {props.transparent ? (
               <Nav.Link href="#menu">Menu</Nav.Link>
             ) : (

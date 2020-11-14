@@ -20,9 +20,9 @@ function Menu() {
 
   return (
     <>
-      <Container className="container-small">
-        <Row id="menu-text">
-          <Col xs={4} md={2}>
+      <Container>
+        <Row id="menu-text" className="justify-content-md-center">
+          <Col xs={4} md="auto">
             <span
               onClick={() => filterImg("all")}
               className={filter === "all" ? "menu-selected" : null}
@@ -30,7 +30,7 @@ function Menu() {
               Tout
             </span>
           </Col>
-          <Col xs={4} md={2}>
+          <Col xs={4} md="auto">
             <span
               onClick={() => filterImg("granola")}
               className={filter === "granola" ? "menu-selected" : null}
@@ -38,7 +38,7 @@ function Menu() {
               Granola
             </span>
           </Col>
-          <Col xs={4} md={2}>
+          <Col xs={4} md="auto">
             <span
               onClick={() => filterImg("muffin")}
               className={filter === "muffin" ? "menu-selected" : null}
@@ -46,7 +46,7 @@ function Menu() {
               Muffins
             </span>
           </Col>
-          <Col xs={4} md={2}>
+          <Col xs={4} md="auto">
             <span
               onClick={() => filterImg("energy")}
               className={filter === "energy" ? "menu-selected" : null}
@@ -54,7 +54,7 @@ function Menu() {
               Energie
             </span>
           </Col>
-          <Col xs={4} md={2}>
+          <Col xs={4} md="auto">
             <span
               onClick={() => filterImg("cream")}
               className={filter === "cream" ? "menu-selected" : null}
@@ -62,12 +62,28 @@ function Menu() {
               Beurre
             </span>
           </Col>
-          <Col xs={4} md={2}>
+          <Col xs={4} md="auto">
+            <span
+              onClick={() => filterImg("nutella")}
+              className={filter === "nutella" ? "menu-selected" : null}
+            >
+              Nutella
+            </span>
+          </Col>
+          <Col xs={4} md="auto">
             <span
               onClick={() => filterImg("sauce")}
               className={filter === "sauce" ? "menu-selected" : null}
             >
               Sauce
+            </span>
+          </Col>
+          <Col xs={4} md="auto">
+            <span
+              onClick={() => filterImg("tarte")}
+              className={filter === "tarte" ? "menu-selected" : null}
+            >
+              Tarte
             </span>
           </Col>
         </Row>
