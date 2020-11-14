@@ -35,7 +35,7 @@ function SimilarProduct(props) {
                   <div className="img-area">
                     <img
                       src={require("../../src/images/" + x.images[0])}
-                      alt=""
+                      alt={x.title}
                     />
                   </div>
                   <div style={{ textAlign: "center" }}>

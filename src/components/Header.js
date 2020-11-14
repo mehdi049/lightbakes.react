@@ -20,14 +20,14 @@ function Header(props) {
           <Nav.Link href="#home" className="text-bold navbar-brand">
             <img
               src={require("../../src/images/logo/top-logo.png")}
-              alt="horizontal logo"
+              alt="logo"
             />
           </Nav.Link>
         ) : (
           <Link to="/" className="text-bold navbar-brand">
             <img
               src={require("../../src/images/logo/top-logo.png")}
-              alt="horizontal logo"
+              alt="logo"
             />
           </Link>
         )}

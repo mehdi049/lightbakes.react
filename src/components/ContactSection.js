@@ -6,6 +6,7 @@ import {
   faInstagramSquare,
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import ToastMessage from "./_sharedComponents/ToastMessage";
 import * as api from "./_api/Api";
 
@@ -81,27 +82,6 @@ function ContactSection() {
           <Row>
             <Col lg={6} id="contact-form">
               <h1 className="text-center">Prenez contact</h1>
-              <div className="text-center">
-                <a
-                  href="https://www.instagram.com/light.bakes/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={faInstagramSquare} size="2x" />{" "}
-                </a>
-                &nbsp;&nbsp;
-                <a
-                  href="https://www.facebook.com/Lightbakes-104528938093690"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faFacebookSquare}
-                    size="2x"
-                    rel="noopener noreferrer"
-                  />
-                </a>
-              </div>
               <br />
               <Form>
                 <Row>
@@ -173,6 +153,36 @@ function ContactSection() {
                   </Col>
                 </Row>
               </Form>
+              <br />
+              <Row>
+                <Col xs={7}>
+                  <p className="text-bold">
+                    Suiver nous sur &nbsp;
+                    <a
+                      href="https://www.instagram.com/light.bakes/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FontAwesomeIcon icon={faInstagramSquare} />{" "}
+                    </a>
+                    &nbsp;
+                    <a
+                      href="https://www.facebook.com/Lightbakes-104528938093690"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FontAwesomeIcon
+                        icon={faFacebookSquare}
+                        rel="noopener noreferrer"
+                      />
+                    </a>
+                  </p>
+                </Col>
+                <Col xs={5} className="text-right text-bold">
+                  <FontAwesomeIcon icon={faPhone} />
+                  &nbsp; 53 755 754
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
