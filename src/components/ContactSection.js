@@ -46,17 +46,20 @@ function ContactSection() {
 
   function sendEmail() {
     if (contactInfo.name === "")
-      return toastHandler("Le champ 'Nom et prénom' est requis", "error");
+      return toastHandler(
+        "'First name / last name' field is required",
+        "error"
+      );
     if (contactInfo.email === "")
-      return toastHandler("Le champ 'Email' est requis", "error");
+      return toastHandler("'Email' field is required", "error");
     if (contactInfo.tel === "")
-      return toastHandler("Le champ 'Num. Tél' est requis", "error");
+      return toastHandler("'Phone number' field is required", "error");
 
     setIsDisabled(true);
     api
       .sendContact(contactInfo)
       .then(() => {
-        toastHandler("Email envoyé avec succés.", "success");
+        toastHandler("Email sent successfully.", "success");
         setContactInfo({
           name: "",
           email: "",
@@ -67,7 +70,7 @@ function ContactSection() {
         setIsDisabled(false);
       })
       .catch((error) => {
-        toastHandler("Une erreur s'est produite, veuillez réessayer.", "error");
+        toastHandler("Error occurred, please try again.", "error");
         setIsDisabled(false);
       });
   }
@@ -81,7 +84,7 @@ function ContactSection() {
         <Container id="contact">
           <Row>
             <Col lg={6} id="contact-form">
-              <h1 className="text-center">Prenez contact</h1>
+              <h1 className="text-center">Contact us</h1>
               <br />
               <Form>
                 <Row>
@@ -90,7 +93,7 @@ function ContactSection() {
                       <Form.Control
                         type="text"
                         name="name"
-                        placeholder="Nom et prénom"
+                        placeholder="First name / last name"
                         onChange={handleContactInfo}
                         value={contactInfo.name}
                       />
@@ -115,7 +118,7 @@ function ContactSection() {
                       <Form.Control
                         type="text"
                         name="tel"
-                        placeholder="Num. Tél"
+                        placeholder="Phone number"
                         onChange={handleContactInfo}
                         value={contactInfo.tel}
                       />
@@ -148,7 +151,7 @@ function ContactSection() {
                       onClick={sendEmail}
                       disabled={isDisabled}
                     >
-                      Envoyer
+                      Send
                     </Button>
                   </Col>
                 </Row>
@@ -157,7 +160,7 @@ function ContactSection() {
               <Row>
                 <Col xs={7}>
                   <p className="text-bold">
-                    Suiver nous sur &nbsp;
+                    Follow us on &nbsp;
                     <a
                       href="https://www.instagram.com/light.bakes/"
                       target="_blank"

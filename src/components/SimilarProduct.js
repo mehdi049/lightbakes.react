@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import data from "./data/product.json";
+import data from "./data/products.json";
 
 function SimilarProduct(props) {
   const [filtredProduct, setFiltredProducts] = useState(data);
@@ -13,13 +13,31 @@ function SimilarProduct(props) {
     setFiltredProducts(_filtredProduct);
   }, []);
 
+  function validateImage(product) {
+    try {
+      return (
+        <img
+          src={require("../../src/images/" + product.images[0])}
+          alt={product.title}
+        />
+      );
+    } catch (err) {
+      return (
+        <img
+          src={require("../../src/images/_not-available.jpg")}
+          alt="not-found"
+        />
+      );
+    }
+  }
+
   if (filtredProduct.length < 1) return null;
 
   return (
     <Container fluid={true}>
       <Row>
         <Col className="text-center">
-          <h1 className="border-orange inline-block">Produits similaires</h1>
+          <h1 className="border-orange inline-block">Similar products</h1>
           <br />
         </Col>
       </Row>
@@ -32,12 +50,7 @@ function SimilarProduct(props) {
                   className="menu-item"
                   onClick={() => props.changeProduct(x.id)}
                 >
-                  <div className="img-area">
-                    <img
-                      src={require("../../src/images/" + x.images[0])}
-                      alt={x.title}
-                    />
-                  </div>
+                  <div className="img-area">{validateImage(x)}</div>
                   <div style={{ textAlign: "center" }}>
                     <br />
                     <span className="text-bold">{x.title}</span> <br />

@@ -68,7 +68,7 @@ function Basket() {
       return (_totalPrice += x.totalPrice);
     });
     setTotalPrice(_totalPrice);
-    toastHandler("Produit retiré avec succés.", "success");
+    toastHandler("Item removed successfully.", "success");
   }
 
   function handleCustomerInfo(event) {
@@ -81,13 +81,16 @@ function Basket() {
 
   function sendOrder() {
     if (customerInfo.name === "")
-      return toastHandler("Le champ 'Nom et prénom' est requis", "error");
+      return toastHandler(
+        "'First name / last name' field is required",
+        "error"
+      );
     if (customerInfo.email === "")
-      return toastHandler("Le champ 'Email' est requis", "error");
+      return toastHandler("'Email' field is required", "error");
     if (customerInfo.tel === "")
-      return toastHandler("Le champ 'Num. Tél' est requis", "error");
+      return toastHandler("'Phone number' field is required", "error");
     if (customerInfo.address === "")
-      return toastHandler("Le champ 'Adresse' est requis", "error");
+      return toastHandler("'Adress' field is required", "error");
 
     localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
     setIsDisabled(true);
@@ -96,12 +99,12 @@ function Basket() {
       .then(() => {
         localStorage.removeItem("basket");
         setBasketItem([]);
-        toastHandler("Commande envoyée avec succés.", "success");
+        toastHandler("Order sent successfully.", "success");
         setIsDisabled(false);
         setShow(false);
       })
       .catch((error) => {
-        toastHandler("Une erreur s'est produite, veuillez réessayer.", "error");
+        toastHandler("Error occurred, please try again.", "error");
         setIsDisabled(false);
       });
   }
@@ -122,7 +125,7 @@ function Basket() {
       <Container fluid className="center-content">
         <Row>
           <Col className="text-center">
-            <h1 className="border-orange inline-block">Mon panier</h1>
+            <h1 className="border-orange inline-block">Basket</h1>
             <br />
           </Col>
         </Row>
@@ -131,7 +134,7 @@ function Basket() {
         {basketItem.length === 0 ? (
           <Row>
             <Col>
-              <Alert variant="info">Le panier est vide.</Alert>
+              <Alert variant="info">The basket is empty.</Alert>
             </Col>
           </Row>
         ) : (
@@ -141,9 +144,9 @@ function Basket() {
                 <Table responsive bordered>
                   <thead>
                     <tr>
-                      <th className="text-bold">Produit</th>
-                      <th className="text-bold">Quantité</th>
-                      <th className="text-bold">Prix</th>
+                      <th className="text-bold">Product</th>
+                      <th className="text-bold">Quantity</th>
+                      <th className="text-bold">Price</th>
                       <th className="text-bold" style={{ width: "100px" }}></th>
                     </tr>
                   </thead>
@@ -181,11 +184,10 @@ function Basket() {
 
                 <p className="text-italic">
                   <FontAwesomeIcon icon={faTruck} size="1x" /> &nbsp;{" "}
-                  <b>Paiement à la livraison.</b>
+                  <b>Cash on delivery.</b>
                   <br />
                   <br />
-                  <b>Note:</b> Le panier sera réinitialisé aprés le passage de
-                  la commande.
+                  <b>The basket will be reset once the order is sent.</b>
                 </p>
               </Col>
             </Row>
@@ -197,7 +199,7 @@ function Basket() {
                   type="button"
                   onClick={handleShow}
                 >
-                  Passer la commande
+                  Submit order
                 </Button>
               </Col>
             </Row>
@@ -209,13 +211,13 @@ function Basket() {
               keyboard={false}
             >
               <Modal.Header closeButton>
-                <Modal.Title>Confirmer la commande</Modal.Title>
+                <Modal.Title>Confirm order</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Form.Group>
                   <Form.Control
                     type="text"
-                    placeholder="Nom et prénom / nom de l'entreprise"
+                    placeholder="First name / last name"
                     name="name"
                     value={customerInfo.name}
                     onChange={handleCustomerInfo}
@@ -233,7 +235,7 @@ function Basket() {
                 <Form.Group>
                   <Form.Control
                     type="text"
-                    placeholder="Num. Tél"
+                    placeholder="Phone number"
                     name="tel"
                     value={customerInfo.tel}
                     onChange={handleCustomerInfo}
@@ -243,7 +245,7 @@ function Basket() {
                   <Form.Control
                     as="textarea"
                     rows="5"
-                    placeholder="Adresse"
+                    placeholder="Adress"
                     name="address"
                     value={customerInfo.address}
                     onChange={handleCustomerInfo}
@@ -259,7 +261,7 @@ function Basket() {
                   onClick={sendOrder}
                   disabled={isDisabled}
                 >
-                  Confirmer
+                  Confirm
                 </Button>
               </Modal.Footer>
             </Modal>

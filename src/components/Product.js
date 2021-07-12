@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Form, Button } from "react-bootstrap";
 import ImageGallery from "react-image-gallery";
 import Header from "./Header";
-import data from "./data/product.json";
+import data from "./data/products.json";
 import ToastMessage from "./_sharedComponents/ToastMessage";
 import SimilarProduct from "./SimilarProduct";
 import ContactSection from "./ContactSection";
@@ -41,6 +41,10 @@ function Product(props) {
     }
   }
 
+  useEffect(() => {
+    filterProduct(props.match.params.id);
+  }, []);
+
   function filterProduct(id) {
     window.scrollTo(0, 0);
 
@@ -51,10 +55,18 @@ function Product(props) {
       setProduct(_product);
       const _images = [];
       _product.images.map((x) => {
-        _images.push({
-          original: require("../../src/images/" + x),
-          thumbnail: require("../../src/images/" + x),
-        });
+        try {
+          require("../../src/images/" + x);
+          return _images.push({
+            original: require("../../src/images/" + x),
+            thumbnail: require("../../src/images/" + x),
+          });
+        } catch (err) {
+          return _images.push({
+            original: require("../../src/images/_not-available.jpg"),
+            thumbnail: require("../../src/images/_not-available.jpg"),
+          });
+        }
       });
 
       setUnityOptions(_product.unityOptions);
@@ -68,10 +80,6 @@ function Product(props) {
       setIsLoading(false);
     }
   }
-
-  useEffect(() => {
-    filterProduct(props.match.params.id);
-  }, []);
 
   function changeProduct(id) {
     filterProduct(id);
@@ -124,13 +132,13 @@ function Product(props) {
 
     setAddedToBasket(productsToAdd);
     localStorage.setItem("basket", JSON.stringify(productsToAdd));
-    toastHandler("Produit ajouté au panier avec succés.", "success");
+    toastHandler("Item added to basket successfully.", "success");
   }
 
   function handlePrice(event) {
     if (event.target.name === "quantity") {
       if (isNaN(event.target.value) || parseInt(event.target.value) === 0)
-        return toastHandler("Quantité incorrecte", "error");
+        return toastHandler("Quantity value is incorrect.", "error");
       const productOptionPrice = product.productOptions.filter(
         (x) => x.option.toLowerCase() === selectedProductOption.toLowerCase()
       )[0].price;
@@ -181,18 +189,6 @@ function Product(props) {
           <Col lg={6} md={7} sm={12}>
             <br className="d-block d-md-none" />
             <p dangerouslySetInnerHTML={{ __html: product.description }} />
-            <p>
-              <span className="text-bold">Ingédients</span>
-            </p>
-            <p>{product.ingredient}</p>
-            {product.nutritionalValue && (
-              <>
-                <p>
-                  <span className="text-bold">Valeur nutritionnelle</span>
-                </p>
-                <p>{product.nutritionalValue}</p>
-              </>
-            )}
             <Row>
               <Col lg={5} md={6} sm={4} xs={6}>
                 <Form.Group>
@@ -250,7 +246,7 @@ function Product(props) {
                     block
                     onClick={handleAddToBasket}
                   >
-                    Ajouter au panier
+                    Add to basket
                   </Button>
                 </Form.Group>
               </Col>

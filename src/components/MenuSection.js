@@ -1,11 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
-import data from "./data/product.json";
+import data from "./data/products.json";
 
 function Menu() {
   const [filter, setFilter] = useState("all");
   const [filtredProduct, setFiltredProducts] = useState(data);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    let _categories = [];
+    data.map((x) => {
+      if (_categories.indexOf(x.category) === -1) _categories.push(x.category);
+    });
+    setCategories(_categories);
+  }, []);
+
+  function validateImage(product) {
+    try {
+      return (
+        <img
+          src={require("../../src/images/" + product.images[0])}
+          alt={product.title}
+        />
+      );
+    } catch (err) {
+      return (
+        <img
+          src={require("../../src/images/_not-available.jpg")}
+          alt="not-found"
+        />
+      );
+    }
+  }
 
   function filterImg(type) {
     setFilter(type);
@@ -27,65 +54,21 @@ function Menu() {
               onClick={() => filterImg("all")}
               className={filter === "all" ? "menu-selected" : null}
             >
-              Tout
+              All
             </span>
           </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("granola")}
-              className={filter === "granola" ? "menu-selected" : null}
-            >
-              Granola
-            </span>
-          </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("muffin")}
-              className={filter === "muffin" ? "menu-selected" : null}
-            >
-              Muffins
-            </span>
-          </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("energy")}
-              className={filter === "energy" ? "menu-selected" : null}
-            >
-              Energie
-            </span>
-          </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("cream")}
-              className={filter === "cream" ? "menu-selected" : null}
-            >
-              Beurre
-            </span>
-          </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("nutella")}
-              className={filter === "nutella" ? "menu-selected" : null}
-            >
-              Nutella
-            </span>
-          </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("sauce")}
-              className={filter === "sauce" ? "menu-selected" : null}
-            >
-              Sauce
-            </span>
-          </Col>
-          <Col xs={4} md="auto">
-            <span
-              onClick={() => filterImg("tarte")}
-              className={filter === "tarte" ? "menu-selected" : null}
-            >
-              Tarte
-            </span>
-          </Col>
+          {categories.map((category) => {
+            return (
+              <Col key={category} xs={4} md="auto">
+                <span
+                  onClick={() => filterImg(category)}
+                  className={filter === category ? "menu-selected" : null}
+                >
+                  {category}
+                </span>
+              </Col>
+            );
+          })}
         </Row>
       </Container>
       <br />
@@ -98,12 +81,7 @@ function Menu() {
               <Col lg={3} sm={6} md={4} key={x.id}>
                 <Link to={path} className="menu-item-link">
                   <div className="menu-item">
-                    <div className="img-area">
-                      <img
-                        src={require("../../src/images/" + x.images[0])}
-                        alt={x.title}
-                      />
-                    </div>
+                    <div className="img-area">{validateImage(x)}</div>
                     <div style={{ textAlign: "center" }}>
                       <br />
                       <span className="text-bold">{x.title}</span> <br />

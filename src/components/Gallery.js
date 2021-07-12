@@ -107,7 +107,7 @@ function GalleryPage() {
       <Container fluid className="center-content">
         <Row>
           <Col className="text-center">
-            <h1 className="border-orange inline-block">Gallerie</h1>
+            <h1 className="border-orange inline-block">Gallery</h1>
             <br />
           </Col>
         </Row>

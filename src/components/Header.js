@@ -18,17 +18,11 @@ function Header(props) {
       <Container>
         {props.transparent ? (
           <Nav.Link href="#home" className="text-bold navbar-brand">
-            <img
-              src={require("../../src/images/logo/top-logo.png")}
-              alt="logo"
-            />
+            <img src={require("../../src/images/logo/logo.png")} alt="logo" />
           </Nav.Link>
         ) : (
           <Link to="/" className="text-bold navbar-brand">
-            <img
-              src={require("../../src/images/logo/top-logo.png")}
-              alt="logo"
-            />
+            <img src={require("../../src/images/logo/logo.png")} alt="logo" />
           </Link>
         )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -46,14 +40,14 @@ function Header(props) {
             <Nav.Link href="#contact">Contact</Nav.Link>
             <li className="nav-item">
               <Link className="nav-link" to="/gallery">
-                Gallerie
+                Gallery
               </Link>
             </li>
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Link className="nav-link" to="/basket">
-            Mon panier &nbsp;
+            Basket &nbsp;
             <FontAwesomeIcon icon={faShoppingBasket} size="1x" />
           </Link>
         </Navbar.Collapse>
