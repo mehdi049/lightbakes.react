@@ -1,3 +1,9 @@
+# Lightbakes (ReactJS version)
+- Lightbakes is website where people can order healthy food.
+- The website has a simple order feature, people can choose a product and select a variety of options related to the chosen product.
+- The website is built using ReactJs and use a JSON file as a database.
+- The website is fully responsive and it uses HTMl / CSS / JS / Bootstrap and some other UI libraries.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
